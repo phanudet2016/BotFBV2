@@ -211,7 +211,7 @@ function receivedPostback(event) {
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
-    setTimeout(function() {
+    //setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
       if(payload==obj.eatCafe){
