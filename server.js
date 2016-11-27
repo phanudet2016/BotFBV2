@@ -3,7 +3,7 @@ var bodyParser = require('body-parser')
 var request = require('request')
 var app = express()
 var test = require('./Data.json')
-console.log(test.family[1].name);
+console.log(test[1].family.name);
 
 app.use(bodyParser.json())
 app.set('port', (process.env.PORT || 4000))
