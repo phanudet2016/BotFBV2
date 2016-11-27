@@ -198,7 +198,8 @@ function receivedPostback(event) {
               }, 1000)
               setTimeout(function() {
                 if(payload==obj.restaurant){
-                  sendTextMessage(senderID, obj.munuFood);
+                  var menu = obj.munuFood;
+                  menu;
                 }
               }, 1500)
             } // end if
