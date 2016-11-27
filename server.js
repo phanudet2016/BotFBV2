@@ -2,7 +2,7 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
 var app = express()
-var test = require('./Data.json')
+var data = require('./Data.json')
 
 
 app.use(bodyParser.json())
@@ -188,16 +188,17 @@ function receivedPostback(event) {
   //////////////////////////////////////////////////////////////////
   else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
     //setTimeout(function() {
-        for(var i = 0; i < test.employees.length; i++) {
-            var obj = test.employees[i];
+        for(var i = 0; i < data.employees.length; i++) {
+            var obj = data.employees[i];
             if(payload==obj.restaurant){ 
                sendTextMessage(senderID, obj.text);
+               sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
         }
     }
     //}, 500)
-    setTimeout(function() {
+    /*setTimeout(function() {
       sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
-    }, 1000)
+    }, 1000)*/
     setTimeout(function() {
        if(payload == 'robinson'){menuFoodRobinson(senderID);}
       else if(payload == 'baannernnam'){menuFoodBaannernnam(senderID);}
