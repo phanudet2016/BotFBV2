@@ -197,10 +197,10 @@ function receivedPostback(event) {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
               }, 1000)
               setTimeout(function() {
-                if(payload==obj.restaurant){
-                  var menu = obj.munuFood;
+              
+             
                   menuFoodRobinson(senderID);
-                }
+                
               }, 1500)
             } // end if
         } // end for
