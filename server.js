@@ -211,20 +211,23 @@ function receivedPostback(event) {
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
-   
+   setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
       if(payload==obj.eatCafe){
-        setTimeout(function() {
-          sendTextMessage(senderID, obj.text);
-       }, 500)
-        setTimeout(function() {
-          sendTextMessage(senderID, obj.text1);
-        }, 1000)
+        sendTextMessage(senderID, obj.text);
       }
     }
-    
-   /* setTimeout(function() {
+   }, 500)
+    setTimeout(function() {
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eatCafe){
+        sendTextMessage(senderID, obj.text1);
+      }
+    }
+   }, 1000)
+   /* setTimeout(function() {  
       if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานฮันนี่โทสต์ที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
       if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานเบอร์รี่เบอร์รี่เครปที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
       if(payload == 'eatCafeThird'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานคาราเมลวาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");/*      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานสตอเบอร์รี่วาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
