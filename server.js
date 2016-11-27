@@ -187,22 +187,14 @@ function receivedPostback(event) {
   } 
   //////////////////////////////////////////////////////////////////
   else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
-    setTimeout(function() {
+    //setTimeout(function() {
         for(var i = 0; i < test.employees.length; i++) {
             var obj = test.employees[i];
             if(payload==obj.restaurant){ 
-               sendTextMessage(senderID, obj.text);
+               sendTextMessage(senderID, obj.text.time);
         }
-    }
-        
-      /*if(payload == 'robinson'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี");}
-      if(payload == 'baannernnam'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่มีหลากหลายเมนูที่สวนอาหาร บ้านเนินน้ำ");}
-      if(payload == 'ChomChol'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่มีหลากหลายเมนูที่ร้านอาหารชมชล");}
-      if(payload == 'Add'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่มีหลากหลายเมนูที่ร้านแอ๊ด ข้าวต้ม กบินทร์บุรี");}
-      if(payload == 'PalmSweetHome'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่มีหลากหลายเมนูที่ร้านอาหาร ปาล์มสวีทโฮม กบินทร์บุรี ปราจีนบุรี");}
-      if(payload == 'NamHiang'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่มีหลากหลายเมนูที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ร้านอร่อยที่กบินทร์บุรี");}
-      if(payload == 'CafeKantary'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบกับเบเกอรี่แสนอร่อยที่ร้าน Cafe Kantary ");}*/
-    }, 500)
+   // }
+   // }, 500)
     setTimeout(function() {
       sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
     }, 1000)
