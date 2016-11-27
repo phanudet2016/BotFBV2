@@ -197,10 +197,8 @@ function receivedPostback(event) {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
               }, 1000)
               setTimeout(function() {
-              
-             
-                  menuFoodRobinson(senderID);
                 
+                  menuFood+obj.munuFood(senderID);
               }, 1500)
             } // end if
         } // end for
