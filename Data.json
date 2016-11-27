@@ -1,5 +1,1 @@
-var family = {
-    "name" : "Jason",
-    "age" : "24",
-    "gender" : "male"
-}
+var obj = { has_thing: true, id: 123 };
