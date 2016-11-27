@@ -192,7 +192,6 @@ function receivedPostback(event) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){ 
               sendTextMessage(senderID, obj.text);
-              
               setTimeout(function() {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
               }, 1000)
@@ -203,7 +202,7 @@ function receivedPostback(event) {
      for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){ 
-               menuFoodRobinson(senderID);
+               obj.munuFood(senderID);
            } // end if
         } // end for
      
