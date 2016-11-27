@@ -203,7 +203,7 @@ function receivedPostback(event) {
      for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){ 
-               menuFood+obj.munuFood(senderID);
+               menuFoodRobinson(senderID);
            } // end if
         } // end for
      
