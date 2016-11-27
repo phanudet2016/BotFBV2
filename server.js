@@ -215,12 +215,12 @@ function receivedPostback(event) {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
       if(payload==obj.eatCafe){
-        setTimeout(function() {
+        
           sendTextMessage(senderID, obj.text);
-        }, 500)
-        setTimeout(function() {
+       
+       
           sendTextMessage(senderID, obj.text1);
-        }, 1000)
+        
       }
     }
     
