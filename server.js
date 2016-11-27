@@ -3,7 +3,7 @@ var bodyParser = require('body-parser')
 var request = require('request')
 var app = express()
 var test = require('./Data.json')
-console.log(test.employees[0].restaurant);
+
 
 app.use(bodyParser.json())
 app.set('port', (process.env.PORT || 4000))
@@ -188,7 +188,7 @@ function receivedPostback(event) {
   //////////////////////////////////////////////////////////////////
   else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
     setTimeout(function() {
-      
+      console.log(test.employees[0].restaurant);
       
      
      /* if(payload == 'robinson'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี");}
