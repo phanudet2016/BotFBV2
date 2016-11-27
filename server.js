@@ -188,8 +188,11 @@ function receivedPostback(event) {
   //////////////////////////////////////////////////////////////////
   else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
     setTimeout(function() {
-      sendTextMessage(senderID,test.employees[0].restaurant);
-      
+    for(i=0;i<2;i++){  
+      if(test.employees[i]."Robinson"){
+        sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี");
+      }
+    }
      
      /* if(payload == 'robinson'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี");}
       if(payload == 'baannernnam'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่มีหลากหลายเมนูที่สวนอาหาร บ้านเนินน้ำ");}
