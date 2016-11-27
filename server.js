@@ -190,7 +190,7 @@ function receivedPostback(event) {
     setTimeout(function() {
       
       var x = test.restaurant[0].A;
-      sendTextMessage(senderID, x);
+     // sendTextMessage(senderID, x);
      
      /* if(payload == 'robinson'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี");}
       if(payload == 'baannernnam'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่มีหลากหลายเมนูที่สวนอาหาร บ้านเนินน้ำ");}
