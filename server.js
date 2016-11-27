@@ -199,7 +199,7 @@ function receivedPostback(event) {
               setTimeout(function() {
                 if(payload==obj.restaurant){
                   var menu = obj.munuFood;
-                  menuFood+"menu"+(senderID);
+                  menuFoodRobinson(senderID);
                 }
               }, 1500)
             } // end if
