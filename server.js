@@ -190,8 +190,8 @@ function receivedPostback(event) {
     //setTimeout(function() {
         for(var i = 0; i < test.employees.length; i++) {
             var obj = test.employees[i];
-            if(payload==obj.restaurant.time){ 
-               sendTextMessage(senderID, obj.text.time);
+            if(payload==obj.restaurant){ 
+               sendTextMessage(senderID, obj.text);
         }
     }
     //}, 500)
