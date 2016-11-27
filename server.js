@@ -187,7 +187,7 @@ function receivedPostback(event) {
   } 
   //////////////////////////////////////////////////////////////////
   else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
-    //setTimeout(function() {
+    setTimeout(function() {
         for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){ 
@@ -196,26 +196,27 @@ function receivedPostback(event) {
               setTimeout(function() {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
               }, 1000)
-              setTimeout(function() {
-                 var obj = data.bigdata[i];
-                if(payload==obj.restaurant){ 
-                  sendTextMessage(senderID, obj.munuFood);
-                }
-                  //menuFood+(senderID);
-              }, 1500)
             } // end if
         } // end for
-    //}, 500)
-   /* setTimeout(function() {
-       if(payload == 'robinson'){menuFoodRobinson(senderID);}
+    }, 500)
+   setTimeout(function() {
+     for(var i = 0; i < data.bigdata.length; i++) {
+            var obj = data.bigdata[i];
+            if(payload==obj.restaurant){ 
+               var menu = obj.munuFood;
+               menuFood+menu(senderID);
+           } // end if
+        } // end for
+     
+       /*if(payload == 'robinson'){menuFoodRobinson(senderID);}
       else if(payload == 'baannernnam'){menuFoodBaannernnam(senderID);}
       else if(payload == 'ChomChol'){menuFoodChomChol(senderID);}
       else if(payload == 'Add'){menuFoodAdd(senderID);}
       else if(payload == 'PalmSweetHome'){menuFoodPalmSweetHome(senderID);}
       else if(payload == 'NamHiang'){menuFoodNamHiang(senderID);}
       else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
-      else{var result = "";}
-    }, 1500)*/
+      else{var result = "";}*/
+    }, 1500)
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
