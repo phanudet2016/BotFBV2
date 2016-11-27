@@ -199,22 +199,14 @@ function receivedPostback(event) {
         } // end for
     }, 500)
    setTimeout(function() {
-     for(var i = 0; i < data.bigdata.length; i++) {
-            var obj = data.bigdata[i];
-            if(payload==obj.restaurant){ 
-              var menu = obj.munuFood;
-               menu(senderID);
-           } // end if
-        } // end for
-     
-       /*if(payload == 'robinson'){menuFoodRobinson(senderID);}
-      else if(payload == 'baannernnam'){menuFoodBaannernnam(senderID);}
-      else if(payload == 'ChomChol'){menuFoodChomChol(senderID);}
-      else if(payload == 'Add'){menuFoodAdd(senderID);}
-      else if(payload == 'PalmSweetHome'){menuFoodPalmSweetHome(senderID);}
-      else if(payload == 'NamHiang'){menuFoodNamHiang(senderID);}
-      else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
-      else{var result = "";}*/
+     if(payload == 'robinson'){menuFoodRobinson(senderID);}
+     else if(payload == 'baannernnam'){menuFoodBaannernnam(senderID);}
+     else if(payload == 'ChomChol'){menuFoodChomChol(senderID);}
+     else if(payload == 'Add'){menuFoodAdd(senderID);}
+     else if(payload == 'PalmSweetHome'){menuFoodPalmSweetHome(senderID);}
+     else if(payload == 'NamHiang'){menuFoodNamHiang(senderID);}
+     else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
+     else{var result = "";}
     }, 1500)
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
