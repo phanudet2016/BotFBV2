@@ -1,1 +1,8 @@
-var obj = { has_thing: true, id: 123 };
+{
+  "firstName": "Joe",
+  "lastName": "Smith"
+}
+{
+  "firstName": "asd",
+  "lastName": "asd"
+}
