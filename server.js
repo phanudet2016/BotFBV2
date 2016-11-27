@@ -249,6 +249,7 @@ function receivedPostback(event) {
       if(payload==obj.eatCafe){sendTextMessage(senderID, obj.holiday);}
     }
    }, 3000)
+  }
   /////////////////////////////ต้องการกินสิ่งนี้ Robinson/////////////////////
   else if(payload == 'eatSalang'||payload == 'eatJefferSteak'||payload == 'eatYayoi'||payload == 'eatHotPot'||payload == 'eatTempura'||payload == 'eatRamenChampion'){
     setTimeout(function() {
