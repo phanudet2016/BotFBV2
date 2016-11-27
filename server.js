@@ -224,39 +224,6 @@ function receivedPostback(event) {
     }
    }, 1000)
     setTimeout(function() {
-    for(var i = 0; i < data.bigdata.length; i++) {
-      var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.price);}
-    }
-   }, 1500)
-    setTimeout(function() {
-    for(var i = 0; i < data.bigdata.length; i++) {
-      var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.open);}
-    }
-   }, 2000)
-    setTimeout(function() {
-    for(var i = 0; i < data.bigdata.length; i++) {
-      var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.holiday);}
-    }
-   }, 2500)
-   /* setTimeout(function() {  
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานฮันนี่โทสต์ที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
-      if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานเบอร์รี่เบอร์รี่เครปที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
-      if(payload == 'eatCafeThird'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานคาราเมลวาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");/*      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานสตอเบอร์รี่วาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
-      if(payload == 'eatCafeFifth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานโอ้ล้าลาฮันนี่โทสต์ที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
-      if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานไอศครีมโฮมเมดที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
-    }, 500)
-    setTimeout(function() {
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "ฮันนี่โทสต์คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "เบอร์รี่เบอร์รี่เครปคนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatCafeThird'){sendTextMessage(senderID, "คาราเมลวาฟเฟิลคนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "สตอเบอร์รี่วาฟเฟิลคนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatCafeFifth'){sendTextMessage(senderID, "โอ้ล้าลาฮันนี่โทสต์คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "ไอศครีมโฮมเมดคนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-    }, 1000)
-    setTimeout(function() {
       if(payload == 'eatCafeFirst'){sendImageCafeFirst(senderID);}
       if(payload == 'eatCafeSecond'){sendImageCafeSecond(senderID);}
       if(payload == 'eatCafeThird'){sendImageCafeThird(senderID);}
@@ -265,30 +232,23 @@ function receivedPostback(event) {
       if(payload == 'eatCafeSixth'){sendImageCafeSixth(senderID);}
     }, 1500)
     setTimeout(function() {
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "ราคา : 80 บาท");} 
-      if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "ราคา : 69 บาท");}
-      if(payload == 'eatCafeThird'){sendTextMessage(senderID, "ราคา : 69 บาท");}
-      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "ราคา : 69 บาท");}
-      if(payload == 'eatCafeFifth'){sendTextMessage(senderID, "ราคา : 80 บาท");}
-      if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "ราคา : 99 บาท");}
-    }, 2000)
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.price);}
+    }
+   }, 2000)
     setTimeout(function() {
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");} 
-      if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
-      if(payload == 'eatCafeThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
-      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
-      if(payload == 'eatCafeFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
-      if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
-    }, 2500)
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.open);}
+    }
+   }, 2500)
     setTimeout(function() {
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");} 
-      if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
-      if(payload == 'eatCafeThird'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
-      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
-      if(payload == 'eatCafeFifth'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
-      if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
-    }, 3000)*/
-  }
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.holiday);}
+    }
+   }, 3000)
   /////////////////////////////ต้องการกินสิ่งนี้ Robinson/////////////////////
   else if(payload == 'eatSalang'||payload == 'eatJefferSteak'||payload == 'eatYayoi'||payload == 'eatHotPot'||payload == 'eatTempura'||payload == 'eatRamenChampion'){
     setTimeout(function() {
