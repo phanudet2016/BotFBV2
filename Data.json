@@ -1,5 +1,5 @@
 {"employees": [
-    {"restaurant":"robinson", "text":"d"},
-    {"restaurant":"baannernnam", "text":"Smith"},
-    {"restaurant":"Peter", "text":"Jones"}
+    {"firstName":"robinson", "text":"d"},
+    {"firstName":"baannernnam", "text":"Smith"},
+    {"firstName":"Peter", "text":"Jones"}
 ]}
