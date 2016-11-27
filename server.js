@@ -6,7 +6,7 @@ var test = require('./Data.json')
 for(var i = 0; i < test.employees.length; i++) {
     var obj = test.employees[i];
 
-    console.log(obj.id);
+    console.log(obj.firstName);
 }
 
 app.use(bodyParser.json())
