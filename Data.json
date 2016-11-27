@@ -1,32 +1,11 @@
-var users = [
-{
-    "id": 1,
-    "username": "goldroger",
-    "name": "Gol D. Roger",
-    "position": "Pirate King"
-},
-{
-    "id": 2,
-    "username": "mrzero",
-    "name": "Sir Crocodile",
-    "position": "Former-Shichibukai"
-},
-{
-    "id": 3,
-    "username": "luffy",
-    "name": "Monkey D. Luffy",
-    "position": "Captain"
-},
-{
-    "id": 4,
-    "username": "kuzan",
-    "name": "Aokiji",
-    "position": "Former Marine Admiral"
-},
-{
-    "id": 5,
-    "username": "shanks",
-    "name": "'Red-Haired' Shanks",
-    "position": "The 4 Emperors"
-}
-];
+let x = {"employees":[
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]}
+{"employees": [
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]}
+
