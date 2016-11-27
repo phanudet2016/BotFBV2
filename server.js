@@ -215,9 +215,9 @@ function receivedPostback(event) {
     for(var i = 0; i < data.eat.length; i++) {
       var obj = data.eat[i];
       if(payload==obj.eatCafe){
-        setTimeout(function() {
+        
           sendTextMessage(senderID, obj.text);
-        }, 500)
+       
       }
     }
     
