@@ -1,5 +1,9 @@
 {"employees": [
-    {"firstName":"robinson", "text":"Doe"},
-    {"firstName":"Anna", "lastName":"Smith"},
-    {"firstName":"Peter", "lastName":"Jones"}
+    {"restaurant":"robinson", "text":"แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี"},
+    {"restaurant":"baannernnam", "text":"Smith"},
+    {"restaurant":"Peter", "text":"Jones"}
+    {"restaurant":"robinson", "text":"Doe"},
+    {"restaurant":"Anna", "text":"Smith"},
+    {"restaurant":"Peter", "text":"Jones"}
+    {"restaurant":"robinson", "text":"Doe"},
 ]}
