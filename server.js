@@ -191,13 +191,16 @@ function receivedPostback(event) {
         for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){ 
-              sendTextMessage(senderID, obj.munuFood);
+              sendTextMessage(senderID, obj.text);
               
               setTimeout(function() {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
               }, 1000)
               setTimeout(function() {
+                 var obj = data.bigdata[i];
+                if(payload==obj.restaurant){ 
                   sendTextMessage(senderID, obj.munuFood);
+                }
                   //menuFood+(senderID);
               }, 1500)
             } // end if
