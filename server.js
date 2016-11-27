@@ -3,7 +3,6 @@ var bodyParser = require('body-parser')
 var request = require('request')
 var app = express()
 
-
 app.use(bodyParser.json())
 app.set('port', (process.env.PORT || 4000))
 app.use(bodyParser.urlencoded({extended: false}))
@@ -17,8 +16,8 @@ app.get('/webhook', function(req, res) {
     res.send(req.query['hub.challenge'])
   } else {
     console.error("Failed validation. Make sure the validation tokens match.");
-    res.sendStatus(403);
-  }
+    res.sendStatus(403);          
+  }  
 });
 
 app.post('/webhook', function (req, res) {
@@ -46,7 +45,7 @@ app.post('/webhook', function (req, res) {
 
     // Assume all went well.
     //
-    // You must send back a 200, within 20 seconds, to let us know you've
+    // You must send back a 200, within 20 seconds, to let us know you've 
     // successfully received the callback. Otherwise, the request will time out.
     res.sendStatus(200);
   }
@@ -58,7 +57,7 @@ function receivedMessage(event) {
   var timeOfMessage = event.timestamp;
   var message = event.message;
 
-  console.log("Received message for user %d and page %d at %d with message:",
+  console.log("Received message for user %d and page %d at %d with message:", 
     senderID, recipientID, timeOfMessage);
   console.log(JSON.stringify(message));
 
@@ -66,7 +65,7 @@ function receivedMessage(event) {
   var messageId = message.mid;
   var appId = message.app_id;
   var metadata = message.metadata;
-
+ 
   // You may get a text or attachment but not both
   var messageText = message.text;
   var messageAttachments = message.attachments;
@@ -74,14 +73,13 @@ function receivedMessage(event) {
 
  /* if (isEcho) {
     // Just logging message echoes to console
-    console.log("Received echo for message %s and app %d with metadata %s",
+    console.log("Received echo for message %s and app %d with metadata %s", 
       messageId, appId, metadata);
     return;
   } else if (quickReply) {
     var quickReplyPayload = quickReply.payload;
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
-
     sendTextMessage(senderID, "Quick reply tapped");
     return;
   }*/
@@ -106,7 +104,7 @@ function receivedMessage(event) {
       }, 1000)
       setTimeout(function() {
         needYourHelp(senderID);
-      }, 1500)
+      }, 1500) 
     }
     else if (messageText == 'ต้องการให้คุณช่วย') {
       setTimeout(function() {
@@ -140,7 +138,7 @@ function receivedMessage(event) {
       default:
         needYourHelpDefault(senderID);
     }
-  }
+  } 
   else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received"); /////ปุ่มกดไลน์ ค่อยทำต่อ
   }
@@ -151,13 +149,13 @@ function receivedPostback(event) {
   var recipientID = event.recipient.id;
   var timeOfPostback = event.timestamp;
 
-  // The 'payload' param is a developer-defined field which is set in a postback
-  // button for Structured Messages.
+  // The 'payload' param is a developer-defined field which is set in a postback 
+  // button for Structured Messages. 
   var payload = event.postback.payload;
-
-  console.log("Received postback for user %d and page %d with payload '%s' " +
+  
+  console.log("Received postback for user %d and page %d with payload '%s' " + 
     "at %d", senderID, recipientID, payload, timeOfPostback);
-
+  
   if(payload == 'getStart'){
        sendTextMessage(senderID, "สวัสดีครับ :)");
        sendGreetMessage(senderID);
@@ -184,7 +182,7 @@ function receivedPostback(event) {
     setTimeout(function() {
       needYourHelp(senderID);
     }, 1500)
-  }
+  } 
   //////////////////////////////////////////////////////////////////
   else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
     setTimeout(function() {
@@ -237,7 +235,7 @@ function receivedPostback(event) {
       if(payload == 'eatCafeSixth'){sendImageCafeSixth(senderID);}
     }, 1500)
     setTimeout(function() {
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "ราคา : 80 บาท");}
+      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "ราคา : 80 บาท");} 
       if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "ราคา : 69 บาท");}
       if(payload == 'eatCafeThird'){sendTextMessage(senderID, "ราคา : 69 บาท");}
       if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "ราคา : 69 บาท");}
@@ -245,7 +243,7 @@ function receivedPostback(event) {
       if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "ราคา : 99 บาท");}
     }, 2000)
     setTimeout(function() {
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
+      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");} 
       if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
       if(payload == 'eatCafeThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
       if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
@@ -253,7 +251,7 @@ function receivedPostback(event) {
       if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 23.00 น.");}
     }, 2500)
     setTimeout(function() {
-      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
+      if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");} 
       if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
       if(payload == 'eatCafeThird'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
       if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
@@ -296,12 +294,12 @@ function receivedPostback(event) {
       if(payload == 'eatRamenChampion'){sendTextMessage(senderID, "ราคา : 155 บาท");}
     }, 2000)
     setTimeout(function() {
-      if(payload == 'eatSalang'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00 - 21.00 น.");}
-      if(payload == 'eatJefferSteak'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00 - 21.00 น.");}
-      if(payload == 'eatYayoi'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");}
-      if(payload == 'eatHotPot'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");}
-      if(payload == 'eatTempura'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");}
-      if(payload == 'eatRamenChampion'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");}
+      if(payload == 'eatSalang'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00 - 21.00 น.");} 
+      if(payload == 'eatJefferSteak'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00 - 21.00 น.");} 
+      if(payload == 'eatYayoi'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");} 
+      if(payload == 'eatHotPot'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");} 
+      if(payload == 'eatTempura'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");} 
+      if(payload == 'eatRamenChampion'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 - 10.00 - 21.00 น.");} 
     }, 2500)
     setTimeout(function() {
       if(payload == 'eatSalang'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
@@ -347,12 +345,12 @@ function receivedPostback(event) {
       if(payload == 'eatTomyumkung'){sendTextMessage(senderID, "ราคา : 170-220 บาท");}
     }, 2000)
     setTimeout(function() {
-      if(payload == 'eatGrilledPork'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");}
-      if(payload == 'eatPigFried'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");}
-      if(payload == 'eatDuck'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");}
-      if(payload == 'eatSquid'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");}
-      if(payload == 'eatPigSpicy'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");}
-      if(payload == 'eatTomyumkung'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");}
+      if(payload == 'eatGrilledPork'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");} 
+      if(payload == 'eatPigFried'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");} 
+      if(payload == 'eatDuck'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");} 
+      if(payload == 'eatSquid'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");} 
+      if(payload == 'eatPigSpicy'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");} 
+      if(payload == 'eatTomyumkung'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 11.00-24.00 น.");} 
     }, 2500)
     setTimeout(function() {
       if(payload == 'eatGrilledPork'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
@@ -394,18 +392,18 @@ function receivedPostback(event) {
       if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "ราคา : 180 บาท");}
     }, 2000)
     setTimeout(function() {
-      if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");}
-      if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");}
-      if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");}
-      if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");}
-      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");}
+      if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
+      if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
+      if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
+      if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
+      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");}    
     }, 2500)
     setTimeout(function() {
       if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
       if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
       if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
       if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
+      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}     
     }, 3000)
   }
   /////////////////////////////ต้องการกินสิ่งนี้ น่ำเฮียง โภชนา/////////////////////
@@ -443,12 +441,12 @@ function receivedPostback(event) {
       if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "ราคา : 300 บาท");}
     }, 2000)
     setTimeout(function() {
-      if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");}
-      if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");}
-      if(payload == 'eatNamHiangThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");}
-      if(payload == 'eatNamHiangFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");}
-      if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");}
-      if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");}
+      if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
+      if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
+      if(payload == 'eatNamHiangThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
+      if(payload == 'eatNamHiangFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
+      if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
+      if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
     }, 2500)
     setTimeout(function() {
       if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
@@ -494,12 +492,12 @@ function receivedPostback(event) {
       if(payload == 'eatAddSixth'){sendTextMessage(senderID, "ราคา : 60 บาท");}
     }, 2000)
     setTimeout(function() {
-      if(payload == 'eatAddFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");}
-      if(payload == 'eatAddSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");}
-      if(payload == 'eatAddThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");}
-      if(payload == 'eatAddFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");}
-      if(payload == 'eatAddFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");}
-      if(payload == 'eatAddSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");}
+      if(payload == 'eatAddFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
+      if(payload == 'eatAddSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
+      if(payload == 'eatAddThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
+      if(payload == 'eatAddFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
+      if(payload == 'eatAddFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
+      if(payload == 'eatAddSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
     }, 2500)
     setTimeout(function() {
       if(payload == 'eatAddFirst'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
@@ -545,12 +543,12 @@ function receivedPostback(event) {
       if(payload == 'eatPalmSixth'){sendTextMessage(senderID, "ราคา : 300 บาท");}
     }, 2000)
     setTimeout(function() {
-      if(payload == 'eatPalmFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");}
-      if(payload == 'eatPalmSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");}
-      if(payload == 'eatPalmThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");}
-      if(payload == 'eatPalmFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");}
-      if(payload == 'eatPalmFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");}
-      if(payload == 'eatPalmSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");}
+      if(payload == 'eatPalmFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");} 
+      if(payload == 'eatPalmSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");} 
+      if(payload == 'eatPalmThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");} 
+      if(payload == 'eatPalmFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");} 
+      if(payload == 'eatPalmFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");} 
+      if(payload == 'eatPalmSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-24.00 น.");} 
     }, 2500)
     setTimeout(function() {
       if(payload == 'eatPalmFirst'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
@@ -572,9 +570,9 @@ function receivedPostback(event) {
   /////////////แสดงรายละเอียดปามสวีทโอม///////////////
   else if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){
     setTimeout(function() {
-      if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){mapReviewPalm(senderID);}
+      if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){mapReviewPalm(senderID);}  
       }, 500)
-    setTimeout(function() {
+    setTimeout(function() { 
         if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
       }, 1000)
     setTimeout(function() {
@@ -589,9 +587,9 @@ function receivedPostback(event) {
   /////////////แสดงรายละเอียดแอ๊ดข้าวต้ม///////////////
   else if(payload=='detailAddFirst'||payload=='detailAddSecond'||payload=='detailAddThird'||payload=='detailAddFourth'||payload=='detailAddFifth'||payload=='detailAddSixth'){
     setTimeout(function() {
-      if(payload=='detailAddFirst'||payload=='detailAddSecond'||payload=='detailAddThird'||payload=='detailAddFourth'||payload=='detailAddFifth'||payload=='detailAddSixth'){mapReviewAdd(senderID);}
+      if(payload=='detailAddFirst'||payload=='detailAddSecond'||payload=='detailAddThird'||payload=='detailAddFourth'||payload=='detailAddFifth'||payload=='detailAddSixth'){mapReviewAdd(senderID);}  
       }, 500)
-    setTimeout(function() {
+    setTimeout(function() { 
         if(payload=='detailAddFirst'||payload=='detailAddSecond'||payload=='detailAddThird'||payload=='detailAddFourth'||payload=='detailAddFifth'||payload=='detailAddSixth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
       }, 1000)
     setTimeout(function() {
@@ -606,9 +604,9 @@ function receivedPostback(event) {
   /////////////แสดงรายละเอียดนำเฮียง///////////////
   else if(payload=='detailNamHiangFirst'||payload=='detailNamHiangSecond'||payload=='detailNamHiangThird'||payload=='detailNamHiangFourth'||payload=='detailNamHiangFifth'||payload=='detailNamHiangSixth'){
     setTimeout(function() {
-      if(payload=='detailNamHiangFirst'||payload=='detailNamHiangSecond'||payload=='detailNamHiangThird'||payload=='detailNamHiangFourth'||payload=='detailNamHiangFifth'||payload=='detailNamHiangSixth'){mapReviewNamHiang(senderID);}
+      if(payload=='detailNamHiangFirst'||payload=='detailNamHiangSecond'||payload=='detailNamHiangThird'||payload=='detailNamHiangFourth'||payload=='detailNamHiangFifth'||payload=='detailNamHiangSixth'){mapReviewNamHiang(senderID);}  
       }, 500)
-    setTimeout(function() {
+    setTimeout(function() { 
         if(payload=='detailNamHiangFirst'||payload=='detailNamHiangSecond'||payload=='detailNamHiangThird'||payload=='detailNamHiangFourth'||payload=='detailNamHiangFifth'||payload=='detailNamHiangSixth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
       }, 1000)
     setTimeout(function() {
@@ -623,9 +621,9 @@ function receivedPostback(event) {
   /////////////แสดงรายละเอียดชมชล///////////////
   else if(payload=='detailChomCholFirst'||payload=='detailChomCholSecond'||payload=='detailChomCholThird'||payload=='detailChomCholFourth'||payload=='detailChomCholFifth'){
     setTimeout(function() {
-      if(payload=='detailChomCholFirst'||payload=='detailChomCholSecond'||payload=='detailChomCholThird'||payload=='detailChomCholFourth'||payload=='detailChomCholFifth'){mapReviewChomChol(senderID);}
+      if(payload=='detailChomCholFirst'||payload=='detailChomCholSecond'||payload=='detailChomCholThird'||payload=='detailChomCholFourth'||payload=='detailChomCholFifth'){mapReviewChomChol(senderID);}  
       }, 500)
-    setTimeout(function() {
+    setTimeout(function() { 
         if(payload=='detailChomCholFirst'||payload=='detailChomCholSecond'||payload=='detailChomCholThird'||payload=='detailChomCholFourth'||payload=='detailChomCholFifth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
       }, 1000)
     setTimeout(function() {
@@ -639,9 +637,9 @@ function receivedPostback(event) {
   /////////////แสดงรายละเอียดบ้านเนินน้ำ///////////////
   else if(payload=='detailBaannernnamFirst'||payload=='detailBaannernnamSecond'||payload=='detailBaannernnamThird'||payload=='detailBaannernnamFourth'||payload=='detailBaannernnamFifth'||payload=='detailBaannernnamSixth'){
     setTimeout(function() {
-      if(payload=='detailBaannernnamFirst'||payload=='detailBaannernnamSecond'||payload=='detailBaannernnamThird'||payload=='detailBaannernnamFourth'||payload=='detailBaannernnamFifth'||payload=='detailBaannernnamSixth'){mapReviewBaannernnam(senderID);}
+      if(payload=='detailBaannernnamFirst'||payload=='detailBaannernnamSecond'||payload=='detailBaannernnamThird'||payload=='detailBaannernnamFourth'||payload=='detailBaannernnamFifth'||payload=='detailBaannernnamSixth'){mapReviewBaannernnam(senderID);}  
       }, 500)
-    setTimeout(function() {
+    setTimeout(function() { 
         if(payload=='detailBaannernnamFirst'||payload=='detailBaannernnamSecond'||payload=='detailBaannernnamThird'||payload=='detailBaannernnamFourth'||payload=='detailBaannernnamFifth'||payload=='detailBaannernnamSixth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
       }, 1000)
     setTimeout(function() {
@@ -656,9 +654,9 @@ function receivedPostback(event) {
   /////////////แสดงรายละเอียด cafe kantary///////////////
   else if(payload=='detailCafeFirst'||payload=='detailCafeSecond'||payload=='detailCafeThird'||payload=='detailCafeFourth'||payload=='detailCafeFifth'||payload=='detailCafeSixth'){
     setTimeout(function() {
-      if(payload=='detailCafeFirst'||payload=='detailCafeSecond'||payload=='detailCafeThird'||payload=='detailCafeFourth'||payload=='detailCafeFifth'||payload=='detailCafeSixth'){mapReviewCafe(senderID);}
+      if(payload=='detailCafeFirst'||payload=='detailCafeSecond'||payload=='detailCafeThird'||payload=='detailCafeFourth'||payload=='detailCafeFifth'||payload=='detailCafeSixth'){mapReviewCafe(senderID);}  
       }, 500)
-    setTimeout(function() {
+    setTimeout(function() { 
         if(payload=='detailCafeFirst'||payload=='detailCafeSecond'||payload=='detailCafeThird'||payload=='detailCafeFourth'||payload=='detailCafeFifth'||payload=='detailCafeSixth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
       }, 1000)
     setTimeout(function() {
@@ -678,9 +676,9 @@ function receivedPostback(event) {
       if(payload == 'detailRobinsonThird'){mapReviewYayoi(senderID);}
       if(payload == 'detailRobinsonFourth'){mapReviewHotPot(senderID);}
       if(payload == 'detailRobinsonFifth'){mapReviewYayoi(senderID);}
-      if(payload == 'detailRobinsonSixth'){mapReviewRamenChampion(senderID);}
+      if(payload == 'detailRobinsonSixth'){mapReviewRamenChampion(senderID);}  
       }, 500)
-    setTimeout(function() {
+    setTimeout(function() { 
         if(payload=='detailRobinsonFirst'||payload=='detailRobinsonSecond'||payload=='detailRobinsonThird'||payload=='detailRobinsonFourth'||payload=='detailRobinsonFifth'||payload=='detailRobinsonSixth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
       }, 1000)
     setTimeout(function() {
@@ -728,7 +726,7 @@ function detailRobinsonFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureRobinsonFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -762,7 +760,7 @@ function detailRobinsonSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureRobinsonFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -796,7 +794,7 @@ function detailRobinsonThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureRobinsonFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -830,7 +828,7 @@ function detailRobinsonFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureRobinsonFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -864,7 +862,7 @@ function detailRobinsonFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureRobinsonFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -898,7 +896,7 @@ function detailRobinsonSixth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureRobinsonFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1096,7 +1094,7 @@ function detailCafeFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureCafeFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1130,7 +1128,7 @@ function detailCafeSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureCafeFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1164,7 +1162,7 @@ function detailCafeThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureCafeFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1198,7 +1196,7 @@ function detailCafeFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureCafeFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1232,7 +1230,7 @@ function detailCafeFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureCafeFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1266,7 +1264,7 @@ function detailCafeSixth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureCafeFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1330,7 +1328,7 @@ function detailBaannernnamFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureBaannernnamFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1364,7 +1362,7 @@ function detailBaannernnamSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureBaannernnamFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1398,7 +1396,7 @@ function detailBaannernnamThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureBaannernnamFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1432,7 +1430,7 @@ function detailBaannernnamFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureBaannernnamFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1466,7 +1464,7 @@ function detailBaannernnamFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureBaannernnamFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1500,7 +1498,7 @@ function detailBaannernnamSixth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureBaannernnamFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1563,7 +1561,7 @@ function detailChomCholFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureChomCholFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1597,7 +1595,7 @@ function detailChomCholSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureChomCholFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1631,7 +1629,7 @@ function detailChomCholThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureChomCholFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1665,7 +1663,7 @@ function detailChomCholFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureChomCholFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1699,7 +1697,7 @@ function detailChomCholFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureChomCholFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1763,7 +1761,7 @@ function detailNamHiangFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1797,7 +1795,7 @@ function detailNamHiangSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1831,7 +1829,7 @@ function detailNamHiangThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1865,7 +1863,7 @@ function detailNamHiangFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1899,7 +1897,7 @@ function detailNamHiangFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1933,7 +1931,7 @@ function detailNamHiangSixth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -1996,7 +1994,7 @@ function detailAddFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2030,7 +2028,7 @@ function detailAddSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2064,7 +2062,7 @@ function detailAddThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2098,7 +2096,7 @@ function detailAddFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2132,7 +2130,7 @@ function detailAddFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2195,7 +2193,7 @@ function detailNamHiangFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2229,7 +2227,7 @@ function detailNamHiangSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2263,7 +2261,7 @@ function detailNamHiangThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2297,7 +2295,7 @@ function detailNamHiangFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2331,7 +2329,7 @@ function detailNamHiangFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2365,7 +2363,7 @@ function detailNamHiangSixth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureNamHiangFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2428,7 +2426,7 @@ function detailAddFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2462,7 +2460,7 @@ function detailAddSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2496,7 +2494,7 @@ function detailAddThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2530,7 +2528,7 @@ function detailAddFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2564,7 +2562,7 @@ function detailAddFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2598,7 +2596,7 @@ function detailAddSixth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"sureAddFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2661,7 +2659,7 @@ function detailPalmFirst(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"surePalmFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2695,7 +2693,7 @@ function detailPalmSecond(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"surePalmFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2729,7 +2727,7 @@ function detailPalmThird(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"surePalmFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2763,7 +2761,7 @@ function detailPalmFourth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"surePalmFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2797,7 +2795,7 @@ function detailPalmFifth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"surePalmFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -2831,7 +2829,7 @@ function detailPalmSixth(recipientId, messageText) {
                 type:"postback",
                 title:"✅ แน่นอน! ไปที่นี้",
                 payload:"surePalmFirst"
-              },
+              }, 
               {
                 type:"postback",
                 title:"🔔 เปลี่ยนเมนูอาหาร",
@@ -4401,7 +4399,7 @@ function menuFoodCafeKantary(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 //เมนูร้านน่ำเฮียง
 function menuFoodNamHiang(recipientId, messageText) {
@@ -4522,7 +4520,7 @@ function menuFoodNamHiang(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 //เมนูร้านปาล์มสวีทโฮม
 function menuFoodPalmSweetHome(recipientId, messageText) {
@@ -4643,7 +4641,7 @@ function menuFoodPalmSweetHome(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 //เมนูร้านแอ๊ดข้าวต้ม
 function menuFoodAdd(recipientId, messageText) {
@@ -4764,7 +4762,7 @@ function menuFoodAdd(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 
 //เมนูร้านชลมล
@@ -4869,7 +4867,7 @@ function menuFoodChomChol(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 //เมนูสวนอาหาร บ้านเนินน้ำ
 function menuFoodBaannernnam(recipientId, messageText) {
@@ -4990,7 +4988,7 @@ function menuFoodBaannernnam(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 //เมนูโรบินสัน
 function menuFoodRobinson(recipientId, messageText) {
@@ -5111,7 +5109,7 @@ function menuFoodRobinson(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 //ต้องการให้คุณช่วย
 function needYourHelp(recipientId, messageText) {
@@ -5214,7 +5212,7 @@ function sendGreetMessage(recipientId, messageText) {
         }
       }
     }
-  };
+  };  
 
   callSendAPI(messageData);
 }
@@ -5354,7 +5352,7 @@ function findRestaurants(recipientId, messageText) {
   }
 };
 callSendAPI(messageData);
-}
+} 
 
 function sendTextMessage(recipientId, messageText) {
   var messageData = {
@@ -5381,15 +5379,44 @@ function callSendAPI(messageData) {
       var recipientId = body.recipient_id;
       var messageId = body.message_id;
 
-      console.log("Successfully sent generic message with id %s to recipient %s",
+      console.log("Successfully sent generic message with id %s to recipient %s", 
         messageId, recipientId);
     } else {
       console.error("Unable to send message.");
       console.error(response);
       console.error(error);
     }
-  });
+  });  
 }
+
+/*function sendQuickReply(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "What's your favorite movie genre?",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Action",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+        },
+        {
+          "content_type":"text",
+          "title":"Comedy",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+        },
+        {
+          "content_type":"text",
+          "title":"Drama",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+        }
+      ]
+    }
+  };
+  callSendAPI(messageData);
+}*/
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
