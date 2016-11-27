@@ -189,7 +189,7 @@ function receivedPostback(event) {
   else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
     setTimeout(function() {
       
-      var x = test.restaurant[payload];
+      var x = test.restaurant[0].A;
       sendTextMessage(senderID, x);
      
      /* if(payload == 'robinson'){sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี");}
