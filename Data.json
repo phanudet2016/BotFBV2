@@ -1,5 +1,5 @@
 {"employees": [
-    {"restaurant":"Robinson"},
+    {"restaurant":"Robinson" "text":"แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี"},
     {"restaurant":"Anna", "lastName":"Smith"},
     {"restaurant":"Peter", "lastName":"Jones"}
 ]}
