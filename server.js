@@ -193,8 +193,8 @@ function receivedPostback(event) {
             if(payload==obj.restaurant.time){ 
                sendTextMessage(senderID, obj.text.time);
         }
-   // }
-   // }, 500)
+    }
+    //}, 500)
     setTimeout(function() {
       sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
     }, 1000)
