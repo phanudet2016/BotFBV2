@@ -191,7 +191,7 @@ function receivedPostback(event) {
         for(var i = 0; i < test.employees.length; i++) {
             var obj = test.employees[i];
             if(payload==obj.firstName){ 
-               sendTextMessage(senderID, "แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี");
+               sendTextMessage(senderID, obj.text);
         }
     }
         
