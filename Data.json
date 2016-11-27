@@ -1,21 +1,32 @@
-data = {
-		id = "payload1"
-		detail{
-			{
-			text:" ?? ชื่อ :  ดาษดาแกลเลอรี่ ",
-			time: 500
-			}
-		}
-		{
-			{
-			text:" เวลาเปิดปิด :  ? เวลาทำการ : 09:00-19:00 น. ",
-			time: 1000
-			}
-		}
-        {
-			{
-			text:" ?? วันเปิดทำการ : เปิดทำการทุกวัน ",
-			time: 1500
-        }
+var users = [
+{
+    "id": 1,
+    "username": "goldroger",
+    "name": "Gol D. Roger",
+    "position": "Pirate King"
+},
+{
+    "id": 2,
+    "username": "mrzero",
+    "name": "Sir Crocodile",
+    "position": "Former-Shichibukai"
+},
+{
+    "id": 3,
+    "username": "luffy",
+    "name": "Monkey D. Luffy",
+    "position": "Captain"
+},
+{
+    "id": 4,
+    "username": "kuzan",
+    "name": "Aokiji",
+    "position": "Former Marine Admiral"
+},
+{
+    "id": 5,
+    "username": "shanks",
+    "name": "'Red-Haired' Shanks",
+    "position": "The 4 Emperors"
 }
-}
+];
