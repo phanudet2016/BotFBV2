@@ -211,11 +211,20 @@ function receivedPostback(event) {
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
-    setTimeout(function() {
+     
+    for(var i = 0; i < data.eat.length; i++) {
+      var obj = data.eat[i];
+      if(payload==obj.eatCafe){
+        setTimeout(function() {
+          sendTextMessage(senderID, obj.text);
+        }, 500)
+      }
+    }
+    
+    /*setTimeout(function() {
       if(payload == 'eatCafeFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานฮันนี่โทสต์ที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
       if(payload == 'eatCafeSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานเบอร์รี่เบอร์รี่เครปที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
-      if(payload == 'eatCafeThird'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานคาราเมลวาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
-      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานสตอเบอร์รี่วาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
+      if(payload == 'eatCafeThird'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานคาราเมลวาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");/*      if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานสตอเบอร์รี่วาฟเฟิลที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
       if(payload == 'eatCafeFifth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานโอ้ล้าลาฮันนี่โทสต์ที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
       if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานไอศครีมโฮมเมดที่ร้าน Cafe Kantary ใช่มั้ยครับ");}
     }, 500)
@@ -258,7 +267,7 @@ function receivedPostback(event) {
       if(payload == 'eatCafeFourth'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
       if(payload == 'eatCafeFifth'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
       if(payload == 'eatCafeSixth'){sendTextMessage(senderID, "วันหยุด : วันอังคารเวลา 10 โมง");}
-    }, 3000)
+    }, 3000)*/
   }
   /////////////////////////////ต้องการกินสิ่งนี้ Robinson/////////////////////
   else if(payload == 'eatSalang'||payload == 'eatJefferSteak'||payload == 'eatYayoi'||payload == 'eatHotPot'||payload == 'eatTempura'||payload == 'eatRamenChampion'){
