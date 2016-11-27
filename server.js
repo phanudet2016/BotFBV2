@@ -191,7 +191,7 @@ function receivedPostback(event) {
         for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){ 
-              sendTextMessage(senderID, obj.text);
+              sendTextMessage(senderID, obj.munuFood);
               
               setTimeout(function() {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
