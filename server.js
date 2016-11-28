@@ -249,6 +249,13 @@ function receivedPostback(event) {
       else if(payload == 'eatChomCholThird'){sendImageChomCholThird(senderID);}
       else if(payload == 'eatChomCholFourth'){sendImageChomCholFourth(senderID);}
       else if(payload == 'eatChomCholFifth'){sendImageChomCholFifth(senderID);}
+      //น่ำเฮียง โภชนา
+      else if(payload == 'eatNamHiangFirst'){sendImageNamHiangFirst(senderID);}
+      else if(payload == 'eatNamHiangSecond'){sendImageNamHiangSecond(senderID);}
+      else if(payload == 'eatNamHiangThird'){sendImageNamHiangThird(senderID);}
+      else if(payload == 'eatNamHiangFourth'){sendImageNamHiangFourth(senderID);}
+      else if(payload == 'eatNamHiangFifth'){sendImageNamHiangFifth(senderID);}
+      else if(payload == 'eatNamHiangSixth'){sendImageNamHiangSixth(senderID);}
       else{var result = "";}
     }, 1500)
     setTimeout(function() {
@@ -273,7 +280,7 @@ function receivedPostback(event) {
 
   
   /////////////////////////////ต้องการกินสิ่งนี้ น่ำเฮียง โภชนา/////////////////////
-  else if(payload == 'eatNamHiangFirst'||payload == 'eatNamHiangSecond'||payload == 'eatNamHiangThird'||payload == 'eatNamHiangFourth'||payload == 'eatNamHiangFifth'||payload == 'eatNamHiangSixth'){
+  /*else if(payload == 'eatNamHiangFirst'||payload == 'eatNamHiangSecond'||payload == 'eatNamHiangThird'||payload == 'eatNamHiangFourth'||payload == 'eatNamHiangFifth'||payload == 'eatNamHiangSixth'){
     setTimeout(function() {
       if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานกระดูกหมูอ่อนทอดกระเทียมพริกไทยที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
       if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานผัดผักกระเฉดชลูดน้ำที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
@@ -322,7 +329,7 @@ function receivedPostback(event) {
       if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
       if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
     }, 3000)
-  }
+  }*/
   /////////////////////////////ต้องการกินสิ่งนี้ แอ๊ดข้าวต้ม/////////////////////
   else if(payload == 'eatAddFirst'||payload == 'eatAddSecond'||payload == 'eatAddThird'||payload == 'eatAddFourth'||payload == 'eatAddFifth'||payload == 'eatAddSixth'){
     setTimeout(function() {
