@@ -290,12 +290,13 @@ function receivedPostback(event) {
       if(payload==obj.eat){sendTextMessage(senderID, obj.holiday);}
     }
    }, 3000)
+   if(payload=='changePalmFood'){menuFoodPalmSweetHome(senderID);}
   }
 
   
   
   /////////ต้องการเปลี่ยนเมนูอาหาร/////////////
-   if(payload=='changePalmFood'){menuFoodPalmSweetHome(senderID);}
+   //if(payload=='changePalmFood'){menuFoodPalmSweetHome(senderID);}
   else if(payload=='changeAddFood'){menuFoodAdd(senderID);}
   else if(payload=='changeCafeFood'){menuFoodCafeKantary(senderID);}
   else if(payload=='changeRobinsonFood'){menuFoodRobinson(senderID);}
