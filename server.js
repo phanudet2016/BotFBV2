@@ -238,7 +238,7 @@ function receivedPostback(event) {
       else if(payload == 'eatRamenChampion'){sendImageRobinsonSixth(senderID);}
       //บ้านเนินน้ำ
       else if(payload == 'eatGrilledPork'){sendImageBaannernnamFirst(senderID);}
-      else if(payload == 'eatPigFried'){sendImageRBaannernnamSecond(senderID);}
+      else if(payload == 'eatPigFried'){sendImageBaannernnamSecond(senderID);}
       else if(payload == 'eatDuck'){sendImageBaannernnamThird(senderID);}
       else if(payload == 'eatSquid'){sendImageBaannernnamFourth(senderID);}
       else if(payload == 'eatPigSpicy'){sendImageBaannernnamFifth(senderID);}
