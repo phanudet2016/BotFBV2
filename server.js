@@ -206,12 +206,8 @@ function receivedPostback(event) {
                 else{var result = "";}
               }, 1500)
             }
-     setTimeout(function() {
-       if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
-     }, 500)
-     setTimeout(function() {
-       if(payload==obj.eat){sendTextMessage(senderID, obj.text1);}
-     }, 1000)
+    
+       if(payload==obj.eat){sendTextMessage(senderID, obj.text);
         
             }
         
