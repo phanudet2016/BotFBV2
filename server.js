@@ -263,6 +263,13 @@ function receivedPostback(event) {
       else if(payload == 'eatAddFourth'){sendImageAddFourth(senderID);}
       else if(payload == 'eatAddFifth'){sendImageAddFifth(senderID);}
       else if(payload == 'eatAddSixth'){sendImageAddSixth(senderID);}
+      //ปาล์มสวีทโฮม
+      else if(payload == 'eatPalmFirst'){sendImagePalmFirst(senderID);}
+      else if(payload == 'eatPalmSecond'){sendImagePalmSecond(senderID);}
+      else if(payload == 'eatPalmThird'){sendImagePalmThird(senderID);}
+      else if(payload == 'eatPalmFourth'){sendImagePalmFourth(senderID);}
+      else if(payload == 'eatPalmFifth'){sendImagePalmFifth(senderID);}
+      else if(payload == 'eatPalmSixth'){sendImagePalmSixth(senderID);}
       else{var result = "";}
     }, 1500)
     setTimeout(function() {
@@ -285,61 +292,8 @@ function receivedPostback(event) {
    }, 3000)
   }
 
-  
- 
-  /////////////////////////////ต้องการกินสิ่งนี้ แอ๊ดข้าวต้ม/////////////////////
-  else if(payload == 'eatAddFirst'||payload == 'eatAddSecond'||payload == 'eatAddThird'||payload == 'eatAddFourth'||payload == 'eatAddFifth'||payload == 'eatAddSixth'){
-    setTimeout(function() {
-      if(payload == 'eatAddFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานกระเฉดชลูดน้ำไฟแดงที่ร้านแอ๊ด ข้าวต้ม ใช่มั้ยครับ");}
-      if(payload == 'eatAddSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานผักบุ้งไฟแดงที่ร้านแอ๊ด ข้าวต้ม ใช่มั้ยครับ");}
-      if(payload == 'eatAddThird'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานหมูผัดหนำเลี๊ยบที่ร้านแอ๊ด ข้าวต้ม ใช่มั้ยครับ");}
-      if(payload == 'eatAddFourth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานแกงป่าปลาเห็ดโคนที่ร้านแอ๊ด ข้าวต้ม ใช่มั้ยครับ");}
-      if(payload == 'eatAddFifth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานเกี้ยมฉ่ายกระเพาะหมูที่ร้านแอ๊ด ข้าวต้ม ใช่มั้ยครับ");}
-      if(payload == 'eatAddSixth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานปลาสลิดทอดที่ร้านแอ๊ด ข้าวต้ม ใช่มั้ยครับ");}
-    }, 500)
-    setTimeout(function() {
-      if(payload == 'eatAddFirst'){sendTextMessage(senderID, "กระเฉดชลูดน้ำไฟแดง คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatAddSecond'){sendTextMessage(senderID, "ผักบุ้งไฟแดง คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatAddThird'){sendTextMessage(senderID, "หมูผัดหนำเลี๊ยบ คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatAddFourth'){sendTextMessage(senderID, "แกงป่าปลาเห็ดโคน คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatAddFifth'){sendTextMessage(senderID, "เกี้ยมฉ่ายกระเพาะหมู คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatAddSixth'){sendTextMessage(senderID, "ปลาสลิดทอด คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-    }, 1000)
-    setTimeout(function() {
-      if(payload == 'eatAddFirst'){sendImageAddFirst(senderID);}
-      if(payload == 'eatAddSecond'){sendImageAddSecond(senderID);}
-      if(payload == 'eatAddThird'){sendImageAddThird(senderID);}
-      if(payload == 'eatAddFourth'){sendImageAddFourth(senderID);}
-      if(payload == 'eatAddFifth'){sendImageAddFifth(senderID);}
-      if(payload == 'eatAddSixth'){sendImageAddSixth(senderID);}
-    }, 1500)
-    setTimeout(function() {
-      if(payload == 'eatAddFirst'){sendTextMessage(senderID, "ราคา : 40-60 บาท");}
-      if(payload == 'eatAddSecond'){sendTextMessage(senderID, "ราคา : 30-60 บาท");}
-      if(payload == 'eatAddThird'){sendTextMessage(senderID, "ราคา : 60 บาท");}
-      if(payload == 'eatAddFourth'){sendTextMessage(senderID, "ราคา : 60 บาท");}
-      if(payload == 'eatAddFifth'){sendTextMessage(senderID, "ราคา : 40-60 บาท");}
-      if(payload == 'eatAddSixth'){sendTextMessage(senderID, "ราคา : 60 บาท");}
-    }, 2000)
-    setTimeout(function() {
-      if(payload == 'eatAddFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
-      if(payload == 'eatAddSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
-      if(payload == 'eatAddThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
-      if(payload == 'eatAddFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
-      if(payload == 'eatAddFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
-      if(payload == 'eatAddSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 17.00-04.00 น.");} 
-    }, 2500)
-    setTimeout(function() {
-      if(payload == 'eatAddFirst'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatAddSecond'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatAddThird'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatAddFourth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatAddFifth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatAddSixth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-    }, 3000)
-  }
    /////////////////////////////ต้องการกินสิ่งนี้ ปาล์มสวีทโฮม/////////////////////
-  else if(payload == 'eatPalmFirst'||payload == 'eatPalmSecond'||payload == 'eatPalmThird'||payload == 'eatPalmFourth'||payload == 'eatPalmFifth'||payload == 'eatPalmSixth'){
+ /* else if(payload == 'eatPalmFirst'||payload == 'eatPalmSecond'||payload == 'eatPalmThird'||payload == 'eatPalmFourth'||payload == 'eatPalmFifth'||payload == 'eatPalmSixth'){
     setTimeout(function() {
       if(payload == 'eatPalmFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานไก่มะนาวที่ร้านอาหาร ปาล์มสวีทโฮม ใช่มั้ยครับ");}
       if(payload == 'eatPalmSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานผักบุ้งไฟแดงที่ร้านอาหาร ปาล์มสวีทโฮม ใช่มั้ยครับ");}
@@ -388,7 +342,7 @@ function receivedPostback(event) {
       if(payload == 'eatPalmFifth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
       if(payload == 'eatPalmSixth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
     }, 3000)
-  }
+  }*/
   /////////ต้องการเปลี่ยนเมนูอาหาร/////////////
   else if(payload=='changePalmFood'){menuFoodPalmSweetHome(senderID);}
   else if(payload=='changeAddFood'){menuFoodAdd(senderID);}
