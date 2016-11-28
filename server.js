@@ -301,11 +301,18 @@ function receivedPostback(event) {
    else if(payload=='changeNamHiangFood'){menuFoodNamHiang(senderID);}
    ////////////////////////////////////////
    
+   ///////// Click แสดงรายละเอียด ///////////
    setTimeout(function() {
      for(var i = 0; i < data.bigdata.length; i++) {
        var obj = data.bigdata[i];
-       if(payload==obj.detailPalm){mapReviewPalm(senderID);}
-       if(payload==obj.detailNamHiang){mapReviewAdd(senderID);}
+       if(payload==obj.detailMapPalm){mapReviewPalm(senderID);}
+       else if(payload==obj.detailMapNamHiang){mapReviewNamHiang(senderID);}
+       else if(payload==obj.detailMapAdd){mapReviewAdd(senderID);}
+       else if(payload==obj.detailMapChomChol){mapReviewChomChol(senderID);}
+       else if(payload==obj.detailMapBaannernnam){mapReviewBaannernnam(senderID);}
+       else if(payload==obj.detailMapCafe){mapReviewCafe(senderID);}
+       else if(payload==obj.detailMapRobinson){mapReviewRobinson(senderID);}
+       else {sendTextMessage(senderID, "error");}
      }//end for
    }, 500)
    
