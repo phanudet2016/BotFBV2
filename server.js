@@ -207,8 +207,11 @@ function receivedPostback(event) {
               }, 1500)
             }
     
-       if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
-        
+       if(payload==obj.eat){
+       setTimeout(function() {
+         var eat = data.bigdata[i];
+         sendTextMessage(senderID, eat.text);}
+        }, 500)
             }
         
    // }, 500)
