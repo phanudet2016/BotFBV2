@@ -186,9 +186,9 @@ function receivedPostback(event) {
     }, 1500)
   } 
   //////////////////////////////////////////////////////////////////
- else if(payload){
+ else if(payload){data.bigdata.find(a => a.restaurant === "robinson"))
     //setTimeout(function() {
-   for(var i = 0; i < data.bigdata.length; i++) {
+  /* for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){
               sendTextMessage(senderID, obj.text);
@@ -209,7 +209,7 @@ function receivedPostback(event) {
             if(payload==obj.eat){
               sendTextMessage(senderID, obj.text);
             }
-        } 
+        } */
    // }, 500)
    /*setTimeout(function() {
      if(payload == 'robinson'){menuFoodRobinson(senderID);}
