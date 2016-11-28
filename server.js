@@ -206,7 +206,7 @@ function receivedPostback(event) {
                 else{var result = "";}
               }, 1500)
             }
-            if(payload==obj.eatCafe){
+            if(payload==obj.eat){
               sendTextMessage(senderID, obj.text);
             }
         } 
