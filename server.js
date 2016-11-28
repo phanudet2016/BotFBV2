@@ -244,11 +244,11 @@ function receivedPostback(event) {
       else if(payload == 'eatPigSpicy'){sendImageBaannernnamFifth(senderID);}
       else if(payload == 'eatTomyumkung'){sendImageBaannernnamSixth(senderID);}
       //ร้านชลชล
-      else if(payload == 'eatChomCholFirst'){sendImageChomCholSecond(senderID);}
-      else if(payload == 'eatChomCholSecond'){sendImageChomCholThird(senderID);}
-      else if(payload == 'eatChomCholThird'){sendImageChomCholFourth(senderID);}
-      else if(payload == 'eatChomCholFourth'){sendImageChomCholFifth(senderID);}
-      else if(payload == 'eatChomCholFifth'){sendImageChomCholSixth(senderID);}
+      else if(payload == 'eatChomCholFirst'){sendImageChomCholFirst(senderID);}
+      else if(payload == 'eatChomCholSecond'){sendImageChomCholSecond(senderID);}
+      else if(payload == 'eatChomCholThird'){sendImageChomCholThird(senderID);}
+      else if(payload == 'eatChomCholFourth'){sendImageChomCholFourth(senderID);}
+      else if(payload == 'eatChomCholFifth'){sendImageChomCholFifth(senderID);}
       else{var result = "";}
     }, 1500)
     setTimeout(function() {
@@ -271,51 +271,7 @@ function receivedPostback(event) {
    }, 3000)
   }
 
-   /////////////////////////////ต้องการกินสิ่งนี้ ร้านชลชล/////////////////////
-  /*else if(payload == 'eatChomCholFirst'||payload == 'eatChomCholSecond'||payload == 'eatChomCholThird'||payload == 'eatChomCholFourth'||payload == 'eatChomCholFifth'){
-    setTimeout(function() {
-      if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานส้มตำปูม้าที่ร้านอาหารชมชล ใช่มั้ยครับ");}
-      if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานลาบปลาช่อนทอดที่ร้านอาหารชมชล ใช่มั้ยครับ");}
-      if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานทอดมันปลากรายที่ร้านอาหารชมชล ใช่มั้ยครับ");}
-      if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานต้มยำกุ้งน้ำข้นที่ร้านอาหารชมชล ใช่มั้ยครับ");}
-      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานปลาเนื้ออ่อนทอดกระเทียมที่ร้านอาหารชมชล ใช่มั้ยครับ");}
-    }, 500)
-    setTimeout(function() {
-      if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "ส้มตำปูม้า คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "ลาบปลาช่อนทอด คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "ทอดมันปลากราย คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "ต้มยำกุ้งน้ำข้น คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "ปลาเนื้ออ่อนทอดกระเทียม คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-    }, 1000)
-    setTimeout(function() {
-      if(payload == 'eatChomCholFirst'){sendImageChomCholFirst(senderID);}
-      if(payload == 'eatChomCholSecond'){sendImageChomCholSecond(senderID);}
-      if(payload == 'eatChomCholThird'){sendImageChomCholThird(senderID);}
-      if(payload == 'eatChomCholFourth'){sendImageChomCholFourth(senderID);}
-      if(payload == 'eatChomCholFifth'){sendImageChomCholFifth(senderID);}
-    }, 1500)
-    setTimeout(function() {
-      if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "ราคา : 180 บาท");}
-      if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "ราคา : 180 บาท");}
-      if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "ราคา : 150 บาท");}
-      if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "ราคา : 200 บาท");}
-      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "ราคา : 180 บาท");}
-    }, 2000)
-    setTimeout(function() {
-      if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
-      if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
-      if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
-      if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");} 
-      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 09.00 – 22.00 น.");}    
-    }, 2500)
-    setTimeout(function() {
-      if(payload == 'eatChomCholFirst'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatChomCholSecond'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatChomCholThird'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatChomCholFourth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}
-      if(payload == 'eatChomCholFifth'){sendTextMessage(senderID, "วันหยุด : เปิดให้บริการทุกวัน");}     
-    }, 3000)
-  }*/
+  
   /////////////////////////////ต้องการกินสิ่งนี้ น่ำเฮียง โภชนา/////////////////////
   else if(payload == 'eatNamHiangFirst'||payload == 'eatNamHiangSecond'||payload == 'eatNamHiangThird'||payload == 'eatNamHiangFourth'||payload == 'eatNamHiangFifth'||payload == 'eatNamHiangSixth'){
     setTimeout(function() {
