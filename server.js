@@ -223,7 +223,7 @@ function receivedPostback(event) {
    }, 1000)
     setTimeout(function() {
       //Cafe
-      if(payload == 'eatCafeFirst'){sendImageCafeFirst(senderID);}
+      if(payload == 'eatCafeFirst'){sendImage.+"Cafe"+.First(senderID);}
       else if(payload == 'eatCafeSecond'){sendImageCafeSecond(senderID);}
       else if(payload == 'eatCafeThird'){sendImageCafeThird(senderID);}
       else if(payload == 'eatCafeFourth'){sendImageCafeFourth(senderID);}
