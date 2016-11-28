@@ -372,19 +372,53 @@
       },
       
       
-      {"detailPalm":"detailPalmFirst"},
-      {"detailPalm":"detailPalmSecond"},
-      {"detailPalm":"detailPalmThird"},
-      {"detailPalm":"detailPalmFourth"},
-      {"detailPalm":"detailPalmFifth"},
-      {"detailPalm":"detailPalmSixth"},
+      {"detailMapPalm":"detailPalmFirst"},
+      {"detailMapPalm":"detailPalmSecond"},
+      {"detailMapPalm":"detailPalmThird"},
+      {"detailMapPalm":"detailPalmFourth"},
+      {"detailMapPalm":"detailPalmFifth"},
+      {"detailMapPalm":"detailPalmSixth"},
       
-      {"detailNamHiang":"detailNamHiangFirst"},
-      {"detailNamHiang":"detailNamHiangSecond"},
-      {"detailNamHiang":"detailNamHiangThird"},
-      {"detailNamHiang":"detailNamHiangFourth"},
-      {"detailNamHiang":"detailNamHiangFifth"},
-      {"detailNamHiang":"detailNamHiangSixth"}
+      {"detailMapNamHiang":"detailNamHiangFirst"},
+      {"detailMapNamHiang":"detailNamHiangSecond"},
+      {"detailMapNamHiang":"detailNamHiangThird"},
+      {"detailMapNamHiang":"detailNamHiangFourth"},
+      {"detailMapNamHiang":"detailNamHiangFifth"},
+      {"detailMapNamHiang":"detailNamHiangSixth"},
+      
+      {"detailMapAdd":"detailAddFirst"},
+      {"detailMapAdd":"detailAddSecond"},
+      {"detailMapAdd":"detailAddThird"},
+      {"detailMapAdd":"detailAddFourth"},
+      {"detailMapAdd":"detailAddFifth"},
+      {"detailMapAdd":"detailAddSixth"},
+      
+      {"detailMapChomChol":"detailChomCholSecond"},
+      {"detailMapChomChol":"detailChomCholThird"},
+      {"detailMapChomChol":"detailChomCholFourth"},
+      {"detailMapChomChol":"detailChomCholFifth"},
+      {"detailMapChomChol":"detailChomCholSixth"},
+      
+      {"detailMapBaannernnam":"detailBaannernnamFirst"},
+      {"detailMapBaannernnam":"detailBaannernnamSecond"},
+      {"detailMapBaannernnam":"detailBaannernnamThird"},
+      {"detailMapBaannernnam":"detailBaannernnamFourth"},
+      {"detailMapBaannernnam":"detailBaannernnamFifth"},
+      {"detailMapBaannernnam":"detailBaannernnamSixth"},
+      
+      {"detailMapCafe":"detailCafeFirst"},
+      {"detailMapCafe":"detailCafeSecond"},
+      {"detailMapCafe":"detailCafeThird"},
+      {"detailMapCafe":"detailCafeFourth"},
+      {"detailMapCafe":"detailCafeFifth"},
+      {"detailMapCafe":"detailCafeSixth"},
+      
+      {"detailMapRobinson":"detailRobinsonFirst"},
+      {"detailMapRobinson":"detailRobinsonSecond"},
+      {"detailMapRobinson":"detailRobinsonThird"},
+      {"detailMapRobinson":"detailRobinsonFourth"},
+      {"detailMapRobinson":"detailRobinsonFifth"},
+      {"detailMapRobinson":"detailRobinsonSixth"},
       
    ]
 }
