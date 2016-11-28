@@ -299,18 +299,18 @@ function receivedPostback(event) {
    else if(payload=='changeBaannernnamFood'){menuFoodBaannernnam(senderID);}
    else if(payload=='changeChomCholFood'){menuFoodChomChol(senderID);}
    else if(payload=='changeNamHiangFood'){menuFoodNamHiang(senderID);}
+   ////////////////////////////////////////
+   
+   setTimeout(function() {
+     for(var i = 0; i < data.bigdata.length; i++) {
+       var obj = data.bigdata[i];
+       if(payload==obj.detailFood){sendTextMessage(senderID, obj.detailFood);}
+     }//end for
+   }, 500)
+   
   }//end else if
 
   
-  
-  /////////ต้องการเปลี่ยนเมนูอาหาร/////////////
-   //if(payload=='changePalmFood'){menuFoodPalmSweetHome(senderID);}
-  else if(payload=='changeAddFood'){menuFoodAdd(senderID);}
-  else if(payload=='changeCafeFood'){menuFoodCafeKantary(senderID);}
-  else if(payload=='changeRobinsonFood'){menuFoodRobinson(senderID);}
-  else if(payload=='changeBaannernnamFood'){menuFoodBaannernnam(senderID);}
-  else if(payload=='changeChomCholFood'){menuFoodChomChol(senderID);}
-  else if(payload=='changeNamHiangFood'){menuFoodNamHiang(senderID);}
   /////////////แสดงรายละเอียดปามสวีทโอม///////////////
   else if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){
     setTimeout(function() {
