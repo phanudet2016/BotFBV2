@@ -206,26 +206,16 @@ function receivedPostback(event) {
                 else{var result = "";}
               }, 1500)
             }
-            if(payload==obj.eat){
-              setTimeout(function() {
-                sendTextMessage(senderID, obj.text);
-              }, 500)
-              setTimeout(function() {
-                sendTextMessage(senderID, obj.text1);
-              }, 1000)
+     setTimeout(function() {
+       if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
+     }, 500)
+     setTimeout(function() {
+       if(payload==obj.eat){sendTextMessage(senderID, obj.text1);}
+     }, 1000)
+        
             }
         } 
    // }, 500)
-   /*setTimeout(function() {
-     if(payload == 'robinson'){menuFoodRobinson(senderID);}
-     else if(payload == 'baannernnam'){menuFoodBaannernnam(senderID);}
-     else if(payload == 'ChomChol'){menuFoodChomChol(senderID);}
-     else if(payload == 'Add'){menuFoodAdd(senderID);}
-     else if(payload == 'PalmSweetHome'){menuFoodPalmSweetHome(senderID);}
-     else if(payload == 'NamHiang'){menuFoodNamHiang(senderID);}
-     else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
-     else{var result = "";}
-    }, 1500)*/
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
