@@ -186,7 +186,7 @@ function receivedPostback(event) {
     }, 1500)
   } 
   //////////////////////////////////////////////////////////////////
- else if(payload){data.bigdata.find(a => a.restaurant === "robinson"))
+ else if(payload){data.bigdata.find(a => a === "robinson"))
     //setTimeout(function() {
   /* for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
