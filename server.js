@@ -204,7 +204,7 @@ function receivedPostback(event) {
                 else if(payload == 'NamHiang'){menuFoodNamHiang(senderID);}
                 else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
                 else{var result = "";}
-              }, 1500
+              }, 1500)
             }
             if(payload==obj.eatCafe){
               sendTextMessage(senderID, obj.text);
