@@ -195,6 +195,16 @@ function receivedPostback(event) {
               setTimeout(function() {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
               }, 1000)
+              setTimeout(function() {
+                if(payload == 'robinson'){menuFoodRobinson(senderID);}
+                else if(payload == 'baannernnam'){menuFoodBaannernnam(senderID);}
+                else if(payload == 'ChomChol'){menuFoodChomChol(senderID);}
+                else if(payload == 'Add'){menuFoodAdd(senderID);}
+                else if(payload == 'PalmSweetHome'){menuFoodPalmSweetHome(senderID);}
+                else if(payload == 'NamHiang'){menuFoodNamHiang(senderID);}
+                else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
+                else{var result = "";}
+              }, 1500
             }
             if(payload==obj.eatCafe){
               sendTextMessage(senderID, obj.text);
