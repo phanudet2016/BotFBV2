@@ -187,7 +187,7 @@ function receivedPostback(event) {
   } 
   //////////////////////////////////////////////////////////////////
  else if(payload){
-    //setTimeout(function() {
+   
    for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){
@@ -206,8 +206,13 @@ function receivedPostback(event) {
                 else{var result = "";}
               }, 1500)
             }
-   }
-   // }, 500)
+   }//end for
+ setTimeout(function() {
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
+    }
+   }, 500)
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
