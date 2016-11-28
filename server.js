@@ -206,14 +206,12 @@ function receivedPostback(event) {
                 else{var result = "";}
               }, 1500)
             }
-    
        if(payload==obj.eat){
-       setTimeout(function() {
-         var eat = data.bigdata[i];
-         sendTextMessage(senderID, eat.text);}
-        }, 500)
-            }
-        
+         setTimeout(function() {
+         sendTextMessage(senderID, obj.text);
+           }, 500)
+       }
+   }
    // }, 500)
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
