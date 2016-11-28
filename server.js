@@ -214,13 +214,13 @@ function receivedPostback(event) {
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.text);}
+      if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
     }
    }, 500)
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.text1);}
+      if(payload==obj.eat){sendTextMessage(senderID, obj.text1);}
     }
    }, 1000)
     setTimeout(function() {
@@ -234,19 +234,19 @@ function receivedPostback(event) {
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.price);}
+      if(payload==obj.eat){sendTextMessage(senderID, obj.price);}
     }
    }, 2000)
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.open);}
+      if(payload==obj.eat){sendTextMessage(senderID, obj.open);}
     }
    }, 2500)
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
-      if(payload==obj.eatCafe){sendTextMessage(senderID, obj.holiday);}
+      if(payload==obj.eat){sendTextMessage(senderID, obj.holiday);}
     }
    }, 3000)
   }
