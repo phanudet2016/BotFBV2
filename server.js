@@ -256,6 +256,13 @@ function receivedPostback(event) {
       else if(payload == 'eatNamHiangFourth'){sendImageNamHiangFourth(senderID);}
       else if(payload == 'eatNamHiangFifth'){sendImageNamHiangFifth(senderID);}
       else if(payload == 'eatNamHiangSixth'){sendImageNamHiangSixth(senderID);}
+      //แอ๊ดข้าวต้ม
+      else if(payload == 'eatAddFirst'){sendImageNamHiangFirst(senderID);}
+      else if(payload == 'eatAddSecond'){sendImageNamHiangSecond(senderID);}
+      else if(payload == 'eatAddThird'){sendImageNamHiangThird(senderID);}
+      else if(payload == 'eatAddFourth'){sendImageNamHiangFourth(senderID);}
+      else if(payload == 'eatAddFifth'){sendImageNamHiangFifth(senderID);}
+      else if(payload == 'eatAddSixth'){sendImageNamHiangSixth(senderID);}
       else{var result = "";}
     }, 1500)
     setTimeout(function() {
@@ -279,57 +286,7 @@ function receivedPostback(event) {
   }
 
   
-  /////////////////////////////ต้องการกินสิ่งนี้ น่ำเฮียง โภชนา/////////////////////
-  /*else if(payload == 'eatNamHiangFirst'||payload == 'eatNamHiangSecond'||payload == 'eatNamHiangThird'||payload == 'eatNamHiangFourth'||payload == 'eatNamHiangFifth'||payload == 'eatNamHiangSixth'){
-    setTimeout(function() {
-      if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานกระดูกหมูอ่อนทอดกระเทียมพริกไทยที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
-      if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานผัดผักกระเฉดชลูดน้ำที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
-      if(payload == 'eatNamHiangThird'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานทอดมันกุ้งที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
-      if(payload == 'eatNamHiangFourth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานมะระผัดไข่ที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
-      if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานต้มยำไก่บ้านที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
-      if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "โอเคครับ! คุณต้องการรับประทานปลาซิวทอดกรอบที่ร้านน่ำเฮียง โภชนา (ฟ้ามุ่ย) ใช่มั้ยครับ");}
-    }, 500)
-    setTimeout(function() {
-      if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "กระดูกหมูอ่อนทอดกระเทียมพริกไทย คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "ผัดผักกระเฉดชลูดน้ำ คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatNamHiangThird'){sendTextMessage(senderID, "ทอดมันกุ้ง คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatNamHiangFourth'){sendTextMessage(senderID, "มะระผัดไข่ คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "ต้มยำไก่บ้าน คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-      if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "ปลาซิวทอดกรอบ คนส่วนใหญ่ชอบรับประทานกันมากครับ :)");}
-    }, 1000)
-    setTimeout(function() {
-      if(payload == 'eatNamHiangFirst'){sendImageNamHiangFirst(senderID);}
-      if(payload == 'eatNamHiangSecond'){sendImageNamHiangSecond(senderID);}
-      if(payload == 'eatNamHiangThird'){sendImageNamHiangThird(senderID);}
-      if(payload == 'eatNamHiangFourth'){sendImageNamHiangFourth(senderID);}
-      if(payload == 'eatNamHiangFifth'){sendImageNamHiangFifth(senderID);}
-      if(payload == 'eatNamHiangSixth'){sendImageNamHiangSixth(senderID);}
-    }, 1500)
-    setTimeout(function() {
-      if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "ราคา : 300 บาท");}
-      if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "ราคา : 100-150 บาท");}
-      if(payload == 'eatNamHiangThird'){sendTextMessage(senderID, "ราคา : 300-400 บาท");}
-      if(payload == 'eatNamHiangFourth'){sendTextMessage(senderID, "ราคา : 300 บาท");}
-      if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "ราคา : 200 บาท");}
-      if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "ราคา : 300 บาท");}
-    }, 2000)
-    setTimeout(function() {
-      if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
-      if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
-      if(payload == 'eatNamHiangThird'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
-      if(payload == 'eatNamHiangFourth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
-      if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
-      if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "เวลาเปิด-ปิด : 10.00-19.00 น.");} 
-    }, 2500)
-    setTimeout(function() {
-      if(payload == 'eatNamHiangFirst'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
-      if(payload == 'eatNamHiangSecond'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
-      if(payload == 'eatNamHiangThird'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
-      if(payload == 'eatNamHiangFourth'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
-      if(payload == 'eatNamHiangFifth'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
-      if(payload == 'eatNamHiangSixth'){sendTextMessage(senderID, "วันหยุด : หยุดไม่แน่นอน");}
-    }, 3000)
-  }*/
+ 
   /////////////////////////////ต้องการกินสิ่งนี้ แอ๊ดข้าวต้ม/////////////////////
   else if(payload == 'eatAddFirst'||payload == 'eatAddSecond'||payload == 'eatAddThird'||payload == 'eatAddFourth'||payload == 'eatAddFifth'||payload == 'eatAddSixth'){
     setTimeout(function() {
