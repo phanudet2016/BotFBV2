@@ -206,16 +206,11 @@ function receivedPostback(event) {
                 else{var result = "";}
               }, 1500)
             }
-       if(payload==obj.eat){
-         setTimeout(function() {
-         sendTextMessage(senderID, obj.text);
-           }, 500)
-       }
    }
    // }, 500)
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
-  else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
+  else if(payload){
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
