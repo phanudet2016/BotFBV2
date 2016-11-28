@@ -369,6 +369,15 @@
          "price":"ราคา : 300 บาท",
          "open":"เวลาเปิด-ปิด : 10.00-24.00 น.",
          "holiday":"วันหยุด : เปิดให้บริการทุกวัน"
-      }
+      },
+      
+      
+      {"detailFood":"detailPalmFirst"},
+      {"detailFood":"detailPalmSecond"},
+      {"detailFood":"detailPalmThird"},
+      {"detailFood":"detailPalmFourth"},
+      {"detailFood":"detailPalmFifth"},
+      {"detailFood":"detailPalmSixth"}
+      
    ]
 }
