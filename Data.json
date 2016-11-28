@@ -1,6 +1,6 @@
 {  
    "bigdata":[  
-      {  "payload":"robinson",
+      { 
          "restaurant":"robinson",
          "text":"แน่นอนครับ! คุณจะพบร้านอาหารที่โรบินสัน ปราจีนบุรี"
       },
@@ -31,7 +31,6 @@
      
       
       {  
-         "payload":"eatCafeFirst",
          "eatCafe":"eatCafeFirst",
          "text":"โอเคครับ! คุณต้องการรับประทานฮันนี่โทสต์ที่ร้าน Cafe Kantary ใช่มั้ยครับ",
          "text1":"ฮันนี่โทสต์คนส่วนใหญ่ชอบรับประทานกันมากครับ :)",
