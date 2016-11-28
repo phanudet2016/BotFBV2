@@ -207,7 +207,7 @@ function receivedPostback(event) {
             }
    }//end for
    
-   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
+   ///////////////////// ต้องการทานสิ่งนี้ //////////////////////////////////////
    setTimeout(function() {
      for(var i = 0; i < data.bigdata.length; i++) {
        var obj = data.bigdata[i];
@@ -222,11 +222,19 @@ function receivedPostback(event) {
    }, 1000)
     setTimeout(function() {
       if(payload == 'eatCafeFirst'){sendImageCafeFirst(senderID);}
-      if(payload == 'eatCafeSecond'){sendImageCafeSecond(senderID);}
-      if(payload == 'eatCafeThird'){sendImageCafeThird(senderID);}
-      if(payload == 'eatCafeFourth'){sendImageCafeFourth(senderID);}
-      if(payload == 'eatCafeFifth'){sendImageCafeFifth(senderID);}
-      if(payload == 'eatCafeSixth'){sendImageCafeSixth(senderID);}
+      else if(payload == 'eatCafeSecond'){sendImageCafeSecond(senderID);}
+      else if(payload == 'eatCafeThird'){sendImageCafeThird(senderID);}
+      else if(payload == 'eatCafeFourth'){sendImageCafeFourth(senderID);}
+      else if(payload == 'eatCafeFifth'){sendImageCafeFifth(senderID);}
+      else if(payload == 'eatCafeSixth'){sendImageCafeSixth(senderID);}
+      
+      else if(payload == 'eatSalang'){sendImageRobinsonFirs(senderID);}
+      else if(payload == 'eatJefferSteak'){sendImageRobinsonSecond(senderID);}
+      else if(payload == 'eatYayoi'){sendImageRobinsonThird(senderID);}
+      else if(payload == 'eatHotPot'){sendImageRobinsonFourth(senderID);}
+      else if(payload == 'eatTempura'){sendImageRobinsonFifth(senderID);}
+      else if(payload == 'eatRamenChampion'){sendImageRobinsonSixth(senderID);}
+      else{var result = "";}
     }, 1500)
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
