@@ -207,12 +207,12 @@ function receivedPostback(event) {
               }, 1500)
             }
             if(payload==obj.eat){
-              setTimeout(function() {
+             // setTimeout(function() {
                 sendTextMessage(senderID, obj.text);
-              }, 500)
-              setTimeout(function() {
+             // }, 500)
+              //setTimeout(function() {
                 sendTextMessage(senderID, obj.text1);
-              }, 1000)
+             // }, 1000)
             }
         } 
    // }, 500)
