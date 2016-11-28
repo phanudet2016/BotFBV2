@@ -257,12 +257,12 @@ function receivedPostback(event) {
       else if(payload == 'eatNamHiangFifth'){sendImageNamHiangFifth(senderID);}
       else if(payload == 'eatNamHiangSixth'){sendImageNamHiangSixth(senderID);}
       //แอ๊ดข้าวต้ม
-      else if(payload == 'eatAddFirst'){sendImageNamHiangFirst(senderID);}
-      else if(payload == 'eatAddSecond'){sendImageNamHiangSecond(senderID);}
-      else if(payload == 'eatAddThird'){sendImageNamHiangThird(senderID);}
-      else if(payload == 'eatAddFourth'){sendImageNamHiangFourth(senderID);}
-      else if(payload == 'eatAddFifth'){sendImageNamHiangFifth(senderID);}
-      else if(payload == 'eatAddSixth'){sendImageNamHiangSixth(senderID);}
+      else if(payload == 'eatAddFirst'){sendImageAddFirst(senderID);}
+      else if(payload == 'eatAddSecond'){sendImageAddSecond(senderID);}
+      else if(payload == 'eatAddThird'){sendImageAddThird(senderID);}
+      else if(payload == 'eatAddFourth'){sendImageAddFourth(senderID);}
+      else if(payload == 'eatAddFifth'){sendImageAddFifth(senderID);}
+      else if(payload == 'eatAddSixth'){sendImageAddSixth(senderID);}
       else{var result = "";}
     }, 1500)
     setTimeout(function() {
