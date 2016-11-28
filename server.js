@@ -187,7 +187,6 @@ function receivedPostback(event) {
   } 
   //////////////////////////////////////////////////////////////////
  else if(payload){
-   
    for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
             if(payload==obj.restaurant){
@@ -207,15 +206,49 @@ function receivedPostback(event) {
               }, 1500)
             }
    }//end for
- setTimeout(function() {
+   
+   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
+   setTimeout(function() {
+     for(var i = 0; i < data.bigdata.length; i++) {
+       var obj = data.bigdata[i];
+       if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
+     }//end for
+   }, 500)
+   setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
-      if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
+      if(payload==obj.eat){sendTextMessage(senderID, obj.text1);}
     }
-   }, 500)
+   }, 1000)
+    setTimeout(function() {
+      if(payload == 'eatCafeFirst'){sendImageCafeFirst(senderID);}
+      if(payload == 'eatCafeSecond'){sendImageCafeSecond(senderID);}
+      if(payload == 'eatCafeThird'){sendImageCafeThird(senderID);}
+      if(payload == 'eatCafeFourth'){sendImageCafeFourth(senderID);}
+      if(payload == 'eatCafeFifth'){sendImageCafeFifth(senderID);}
+      if(payload == 'eatCafeSixth'){sendImageCafeSixth(senderID);}
+    }, 1500)
+    setTimeout(function() {
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eat){sendTextMessage(senderID, obj.price);}
+    }
+   }, 2000)
+    setTimeout(function() {
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eat){sendTextMessage(senderID, obj.open);}
+    }
+   }, 2500)
+    setTimeout(function() {
+    for(var i = 0; i < data.bigdata.length; i++) {
+      var obj = data.bigdata[i];
+      if(payload==obj.eat){sendTextMessage(senderID, obj.holiday);}
+    }
+   }, 3000)
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
-  else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
+  /*else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
@@ -254,7 +287,7 @@ function receivedPostback(event) {
       if(payload==obj.eat){sendTextMessage(senderID, obj.holiday);}
     }
    }, 3000)
-  }
+  }*/
   /////////////////////////////ต้องการกินสิ่งนี้ Robinson/////////////////////
   else if(payload == 'eatSalang'||payload == 'eatJefferSteak'||payload == 'eatYayoi'||payload == 'eatHotPot'||payload == 'eatTempura'||payload == 'eatRamenChampion'){
     setTimeout(function() {
