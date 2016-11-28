@@ -186,7 +186,7 @@ function receivedPostback(event) {
     }, 1500)
   } 
   //////////////////////////////////////////////////////////////////
-  
+  else if(payload == 'robinson'||payload == 'baannernnam'||payload == 'ChomChol'||payload == 'Add'||payload == 'PalmSweetHome'||payload == 'NamHiang'||payload == 'CafeKantary'){
     setTimeout(function() {
         for(var i = 0; i < data.bigdata.length; i++) {
             var obj = data.bigdata[i];
@@ -208,7 +208,7 @@ function receivedPostback(event) {
      else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
      else{var result = "";}
     }, 1500)
-  
+  }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
     setTimeout(function() {
