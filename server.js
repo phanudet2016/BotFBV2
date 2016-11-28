@@ -207,7 +207,7 @@ function receivedPostback(event) {
               }, 1500)
             }
     
-       if(payload==obj.eat){sendTextMessage(senderID, obj.text);
+       if(payload==obj.eat){sendTextMessage(senderID, obj.text);}
         
             }
         
