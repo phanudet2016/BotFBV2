@@ -372,12 +372,12 @@
       },
       
       
-      {"detailFood":"detailPalmFirst"},
-      {"detailFood":"detailPalmSecond"},
-      {"detailFood":"detailPalmThird"},
-      {"detailFood":"detailPalmFourth"},
-      {"detailFood":"detailPalmFifth"},
-      {"detailFood":"detailPalmSixth"}
+      {"detailPalm":"detailPalmFirst"},
+      {"detailPalm":"detailPalmSecond"},
+      {"detailPalm":"detailPalmThird"},
+      {"detailPalm":"detailPalmFourth"},
+      {"detailPalm":"detailPalmFifth"},
+      {"detailPalm":"detailPalmSixth"}
       
    ]
 }
