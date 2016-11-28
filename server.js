@@ -195,10 +195,13 @@ function receivedPostback(event) {
               setTimeout(function() {
                 sendTextMessage(senderID, "คุณชอบรับประทานอาหารประเภทไหนครับ");
               }, 1000)
-            } 
+            }
+            if(payload==obj.eatCafe){
+              sendTextMessage(senderID, obj.text);
+            }
         } 
    // }, 500)
-   setTimeout(function() {
+   /*setTimeout(function() {
      if(payload == 'robinson'){menuFoodRobinson(senderID);}
      else if(payload == 'baannernnam'){menuFoodBaannernnam(senderID);}
      else if(payload == 'ChomChol'){menuFoodChomChol(senderID);}
@@ -207,7 +210,7 @@ function receivedPostback(event) {
      else if(payload == 'NamHiang'){menuFoodNamHiang(senderID);}
      else if(payload == 'CafeKantary'){menuFoodCafeKantary(senderID);}
      else{var result = "";}
-    }, 1500)
+    }, 1500)*/
   }
   ///////////////////// ต้องการทานสิ่งนี้ Cafe//////////////////////////////////////
   else if(payload == 'eatCafeFirst'||payload == 'eatCafeSecond'||payload == 'eatCafeThird'||payload == 'eatCafeFourth'||payload == 'eatCafeFifth'||payload == 'eatCafeSixth'){
