@@ -377,7 +377,14 @@
       {"detailPalm":"detailPalmThird"},
       {"detailPalm":"detailPalmFourth"},
       {"detailPalm":"detailPalmFifth"},
-      {"detailPalm":"detailPalmSixth"}
+      {"detailPalm":"detailPalmSixth"},
+      
+      {"detailNamHiang":"detailNamHiangFirst"},
+      {"detailNamHiang":"detailNamHiangSecond"},
+      {"detailNamHiang":"detailNamHiangThird"},
+      {"detailNamHiang":"detailNamHiangFourth"},
+      {"detailNamHiang":"detailNamHiangFifth"},
+      {"detailNamHiang":"detailNamHiangSixth"}
       
    ]
 }
