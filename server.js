@@ -228,7 +228,7 @@ function receivedPostback(event) {
       else if(payload == 'eatCafeFifth'){sendImageCafeFifth(senderID);}
       else if(payload == 'eatCafeSixth'){sendImageCafeSixth(senderID);}
       
-      else if(payload == 'eatSalang'){sendImageRobinsonFirs(senderID);}
+      else if(payload == 'eatSalang'){sendImageRobinsonFirst(senderID);}
       else if(payload == 'eatJefferSteak'){sendImageRobinsonSecond(senderID);}
       else if(payload == 'eatYayoi'){sendImageRobinsonThird(senderID);}
       else if(payload == 'eatHotPot'){sendImageRobinsonFourth(senderID);}
