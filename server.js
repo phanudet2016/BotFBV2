@@ -290,8 +290,16 @@ function receivedPostback(event) {
       if(payload==obj.eat){sendTextMessage(senderID, obj.holiday);}
     }
    }, 3000)
+   
+   /////////ต้องการเปลี่ยนเมนูอาหาร/////////////
    if(payload=='changePalmFood'){menuFoodPalmSweetHome(senderID);}
-  }
+   else if(payload=='changeAddFood'){menuFoodAdd(senderID);}
+   else if(payload=='changeCafeFood'){menuFoodCafeKantary(senderID);}
+   else if(payload=='changeRobinsonFood'){menuFoodRobinson(senderID);}
+   else if(payload=='changeBaannernnamFood'){menuFoodBaannernnam(senderID);}
+   else if(payload=='changeChomCholFood'){menuFoodChomChol(senderID);}
+   else if(payload=='changeNamHiangFood'){menuFoodNamHiang(senderID);}
+  }//end else if
 
   
   
