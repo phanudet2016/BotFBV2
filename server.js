@@ -311,7 +311,14 @@ function receivedPostback(event) {
        if(payload==obj.detailMapChomChol){mapReviewChomChol(senderID);}
        if(payload==obj.detailMapBaannernnam){mapReviewBaannernnam(senderID);}
        if(payload==obj.detailMapCafe){mapReviewCafe(senderID);}
-       if(payload==obj.detailMapRobinson){mapReviewRobinson(senderID);}
+       if(payload==obj.detailMapRobinson){
+         if(payload == 'detailRobinsonFirst'){mapReviewSalang(senderID);}
+         if(payload == 'detailRobinsonSecond'){mapReviewJefferSteak(senderID);}
+         if(payload == 'detailRobinsonThird'){mapReviewYayoi(senderID);}
+         if(payload == 'detailRobinsonFourth'){mapReviewHotPot(senderID);}
+         if(payload == 'detailRobinsonFifth'){mapReviewYayoi(senderID);}
+         if(payload == 'detailRobinsonSixth'){mapReviewRamenChampion(senderID);} 
+       }
      }//end for
    }, 500)
    
