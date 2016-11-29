@@ -312,7 +312,7 @@ function receivedPostback(event) {
        else if(payload==obj.detailMapBaannernnam){mapReviewBaannernnam(senderID);}
        else if(payload==obj.detailMapCafe){mapReviewCafe(senderID);}
        else if(payload==obj.detailMapRobinson){mapReviewRobinson(senderID);}*/
-       else {sendTextMessage(senderID, "error");}
+     
      }//end for
    }, 500)
    
