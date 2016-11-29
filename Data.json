@@ -372,12 +372,12 @@
       },
       
       
-      {"detailMapPalm":"detailPalmFirst", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
+      {"detailMapPalm":"detailPalmFirst"},
       {"detailMapPalm":"detailPalmSecond", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapPalm":"detailPalmThird", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapPalm":"detailPalmFourth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapPalm":"detailPalmFifth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
-      {"detailMapPalm":"detailPalmSixth", "text":"นี้คือสิ่งที่คุณจะไป 🏠",
+      {"detailMapPalm":"detailPalmSixth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       
       {"detailMapNamHiang":"detailNamHiangFirst", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapNamHiang":"detailNamHiangSecond", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
