@@ -344,35 +344,62 @@ function receivedPostback(event) {
           if(payload == 'detailPalmFifth'){detailPalmFifth(senderID);}
           if(payload == 'detailPalmSixth'){detailPalmSixth(senderID);}
        }
-       if(payload==obj.detailMapNamHiang){sendTextMessage(senderID, obj.text);}
-       if(payload==obj.detailMapAdd){sendTextMessage(senderID, obj.text);}
-       if(payload==obj.detailMapChomChol){sendTextMessage(senderID, obj.text);}
-       if(payload==obj.detailMapBaannernnam){sendTextMessage(senderID, obj.text);}
-       if(payload==obj.detailMapCafe){sendTextMessage(senderID, obj.text);}
-       if(payload==obj.detailMapRobinson){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapNamHiang){
+         if(payload == 'detailNamHiangFirst'){detailNamHiangFirst(senderID);}
+         if(payload == 'detailNamHiangSecond'){detailNamHiangSecond(senderID);}
+         if(payload == 'detailNamHiangThird'){detailNamHiangThird(senderID);}
+         if(payload == 'detailNamHiangFourth'){detailNamHiangFourth(senderID);}
+         if(payload == 'detailNamHiangFifth'){detailNamHiangFifth(senderID);}
+         if(payload == 'detailNamHiangSixth'){detailNamHiangSixth(senderID);}
+       }
+       if(payload==obj.detailMapAdd){
+         if(payload == 'detailAddFirst'){detailAddFirst(senderID);}
+         if(payload == 'detailAddSecond'){detailAddSecond(senderID);}
+         if(payload == 'detailAddThird'){detailAddThird(senderID);}
+         if(payload == 'detailAddFourth'){detailAddFourth(senderID);}
+         if(payload == 'detailAddFifth'){detailAddFifth(senderID);}
+         if(payload == 'detailAddSixth'){detailAddSixth(senderID);}
+       }
+       if(payload==obj.detailMapChomChol){
+         if(payload == 'detailChomCholFirst'){detailChomCholFirst(senderID);}
+         if(payload == 'detailChomCholSecond'){detailChomCholSecond(senderID);}
+         if(payload == 'detailChomCholThird'){detailChomCholThird(senderID);}
+         if(payload == 'detailChomCholFourth'){detailChomCholFourth(senderID);}
+         if(payload == 'detailChomCholFifth'){detailChomCholFifth(senderID);}
+       }
+       if(payload==obj.detailMapBaannernnam){
+         if(payload == 'detailBaannernnamFirst'){detailBaannernnamFirst(senderID);}
+         if(payload == 'detailBaannernnamSecond'){detailBaannernnamSecond(senderID);}
+         if(payload == 'detailBaannernnamThird'){detailBaannernnamThird(senderID);}
+         if(payload == 'detailBaannernnamFourth'){detailBaannernnamFourth(senderID);}
+         if(payload == 'detailBaannernnamFifth'){detailBaannernnamFifth(senderID);}
+         if(payload == 'detailBaannernnamSixth'){detailBaannernnamSixth(senderID);}
+       }
+       if(payload==obj.detailMapCafe){
+         if(payload == 'detailCafeFirst'){detailCafeFirst(senderID);}
+         if(payload == 'detailCafeSecond'){detailCafeSecond(senderID);}
+         if(payload == 'detailCafeThird'){detailCafeThird(senderID);}
+         if(payload == 'detailCafeFourth'){detailCafeFourth(senderID);}
+         if(payload == 'detailCafeFifth'){detailCafeFifth(senderID);}
+         if(payload == 'detailCafeSixth'){detailCafeSixth(senderID);}
+       }
+       if(payload==obj.detailMapRobinson){
+         if(payload == 'detailRobinsonFirst'){detailRobinsonFirst(senderID);}
+         if(payload == 'detailRobinsonSecond'){detailRobinsonSecond(senderID);}
+         if(payload == 'detailRobinsonThird'){detailRobinsonThird(senderID);}
+         if(payload == 'detailRobinsonFourth'){detailRobinsonFourth(senderID);}
+         if(payload == 'detailRobinsonFifth'){detailRobinsonFifth(senderID);}
+         if(payload == 'detailRobinsonSixth'){detailRobinsonSixth(senderID);}   
+       }
      }//end for
    }, 1500)
+   /////////////////////////////////////////////////////////////////
+   
+   
   }//end else if
 
   
-  /////////////แสดงรายละเอียดปามสวีทโอม///////////////
-  else if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){
-    setTimeout(function() {
-      if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){mapReviewPalm(senderID);}  
-      }, 500)
-    setTimeout(function() { 
-        if(payload=='detailPalmFirst'||payload=='detailPalmSecond'||payload=='detailPalmThird'||payload=='detailPalmFourth'||payload=='detailPalmFifth'||payload=='detailPalmSixth'){sendTextMessage(senderID, "นี้คือสิ่งที่คุณจะไป 🏠");}
-      }, 1000)
-    setTimeout(function() {
-      if(payload == 'detailPalmFirst'){detailPalmFirst(senderID);}
-      if(payload == 'detailPalmSecond'){detailPalmSecond(senderID);}
-      if(payload == 'detailPalmThird'){detailPalmThird(senderID);}
-      if(payload == 'detailPalmFourth'){detailPalmFourth(senderID);}
-      if(payload == 'detailPalmFifth'){detailPalmFifth(senderID);}
-      if(payload == 'detailPalmSixth'){detailPalmSixth(senderID);}
-      }, 1500)
-  }
-  /////////////แสดงรายละเอียดแอ๊ดข้าวต้ม///////////////
+/*//////แสดงรายละเอียดแอ๊ดข้าวต้ม///////////////
   else if(payload=='detailAddFirst'||payload=='detailAddSecond'||payload=='detailAddThird'||payload=='detailAddFourth'||payload=='detailAddFifth'||payload=='detailAddSixth'){
     setTimeout(function() {
       if(payload=='detailAddFirst'||payload=='detailAddSecond'||payload=='detailAddThird'||payload=='detailAddFourth'||payload=='detailAddFifth'||payload=='detailAddSixth'){mapReviewAdd(senderID);}  
@@ -388,9 +415,9 @@ function receivedPostback(event) {
       if(payload == 'detailAddFifth'){detailAddFifth(senderID);}
       if(payload == 'detailAddSixth'){detailAddSixth(senderID);}
       }, 1500)
-  }
+  }*/
   /////////////แสดงรายละเอียดนำเฮียง///////////////
-  else if(payload=='detailNamHiangFirst'||payload=='detailNamHiangSecond'||payload=='detailNamHiangThird'||payload=='detailNamHiangFourth'||payload=='detailNamHiangFifth'||payload=='detailNamHiangSixth'){
+  /*else if(payload=='detailNamHiangFirst'||payload=='detailNamHiangSecond'||payload=='detailNamHiangThird'||payload=='detailNamHiangFourth'||payload=='detailNamHiangFifth'||payload=='detailNamHiangSixth'){
     setTimeout(function() {
       if(payload=='detailNamHiangFirst'||payload=='detailNamHiangSecond'||payload=='detailNamHiangThird'||payload=='detailNamHiangFourth'||payload=='detailNamHiangFifth'||payload=='detailNamHiangSixth'){mapReviewNamHiang(senderID);}  
       }, 500)
@@ -405,9 +432,9 @@ function receivedPostback(event) {
       if(payload == 'detailNamHiangFifth'){detailNamHiangFifth(senderID);}
       if(payload == 'detailNamHiangSixth'){detailNamHiangSixth(senderID);}
       }, 1500)
-  }
+  }*/
   /////////////แสดงรายละเอียดชมชล///////////////
-  else if(payload=='detailChomCholFirst'||payload=='detailChomCholSecond'||payload=='detailChomCholThird'||payload=='detailChomCholFourth'||payload=='detailChomCholFifth'){
+  /*else if(payload=='detailChomCholFirst'||payload=='detailChomCholSecond'||payload=='detailChomCholThird'||payload=='detailChomCholFourth'||payload=='detailChomCholFifth'){
     setTimeout(function() {
       if(payload=='detailChomCholFirst'||payload=='detailChomCholSecond'||payload=='detailChomCholThird'||payload=='detailChomCholFourth'||payload=='detailChomCholFifth'){mapReviewChomChol(senderID);}  
       }, 500)
@@ -421,9 +448,9 @@ function receivedPostback(event) {
       if(payload == 'detailChomCholFourth'){detailChomCholFourth(senderID);}
       if(payload == 'detailChomCholFifth'){detailChomCholFifth(senderID);}
      }, 1500)
-  }
+  }*/
   /////////////แสดงรายละเอียดบ้านเนินน้ำ///////////////
-  else if(payload=='detailBaannernnamFirst'||payload=='detailBaannernnamSecond'||payload=='detailBaannernnamThird'||payload=='detailBaannernnamFourth'||payload=='detailBaannernnamFifth'||payload=='detailBaannernnamSixth'){
+/*  else if(payload=='detailBaannernnamFirst'||payload=='detailBaannernnamSecond'||payload=='detailBaannernnamThird'||payload=='detailBaannernnamFourth'||payload=='detailBaannernnamFifth'||payload=='detailBaannernnamSixth'){
     setTimeout(function() {
       if(payload=='detailBaannernnamFirst'||payload=='detailBaannernnamSecond'||payload=='detailBaannernnamThird'||payload=='detailBaannernnamFourth'||payload=='detailBaannernnamFifth'||payload=='detailBaannernnamSixth'){mapReviewBaannernnam(senderID);}  
       }, 500)
@@ -438,9 +465,9 @@ function receivedPostback(event) {
       if(payload == 'detailBaannernnamFifth'){detailBaannernnamFifth(senderID);}
       if(payload == 'detailBaannernnamSixth'){detailBaannernnamSixth(senderID);}
       }, 1500)
-  }
+  }*/
   /////////////แสดงรายละเอียด cafe kantary///////////////
-  else if(payload=='detailCafeFirst'||payload=='detailCafeSecond'||payload=='detailCafeThird'||payload=='detailCafeFourth'||payload=='detailCafeFifth'||payload=='detailCafeSixth'){
+ /* else if(payload=='detailCafeFirst'||payload=='detailCafeSecond'||payload=='detailCafeThird'||payload=='detailCafeFourth'||payload=='detailCafeFifth'||payload=='detailCafeSixth'){
     setTimeout(function() {
       if(payload=='detailCafeFirst'||payload=='detailCafeSecond'||payload=='detailCafeThird'||payload=='detailCafeFourth'||payload=='detailCafeFifth'||payload=='detailCafeSixth'){mapReviewCafe(senderID);}  
       }, 500)
@@ -455,9 +482,9 @@ function receivedPostback(event) {
       if(payload == 'detailCafeFifth'){detailCafeFifth(senderID);}
       if(payload == 'detailCafeSixth'){detailCafeSixth(senderID);}
       }, 1500)
-  }
+  }*/
   /////////////แสดงรายละเอียดโรบินสัน///////////////
-  else if(payload=='detailRobinsonFirst'||payload=='detailRobinsonSecond'||payload=='detailRobinsonThird'||payload=='detailRobinsonFourth'||payload=='detailRobinsonFifth'||payload=='detailRobinsonSixth'){
+ /* else if(payload=='detailRobinsonFirst'||payload=='detailRobinsonSecond'||payload=='detailRobinsonThird'||payload=='detailRobinsonFourth'||payload=='detailRobinsonFifth'||payload=='detailRobinsonSixth'){
     setTimeout(function() {
       if(payload == 'detailRobinsonFirst'){mapReviewSalang(senderID);}
       if(payload == 'detailRobinsonSecond'){mapReviewJefferSteak(senderID);}
@@ -477,7 +504,7 @@ function receivedPostback(event) {
       if(payload == 'detailRobinsonFifth'){detailRobinsonFifth(senderID);}
       if(payload == 'detailRobinsonSixth'){detailRobinsonSixth(senderID);}
       }, 1500)
-  }
+  }*/
   ///////ไปร้านนี้แน่นอน
   else if(payload=='sureRobinsonFirst'||payload=='sureCafeFirst'||payload=='sureBaannernnamFirst'||payload=='sureChomCholFirst'||payload=='sureNamHiangFirst'||payload=='sureAddFirst'||payload=='surePalmFirst'){
     setTimeout(function() {
