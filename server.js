@@ -321,7 +321,12 @@ function receivedPostback(event) {
        }
      }//end for
    }, 500)
-   
+   setTimeout(function() {
+     for(var i = 0; i < data.bigdata.length; i++) {
+       var obj = data.bigdata[i];
+       if(payload==obj.detailMapPalm){{sendTextMessage(senderID, obj.text);}
+     }//end for
+   }, 1000)
   }//end else if
 
   
