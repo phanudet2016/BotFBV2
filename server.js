@@ -325,6 +325,12 @@ function receivedPostback(event) {
      for(var i = 0; i < data.bigdata.length; i++) {
        var obj = data.bigdata[i];
        if(payload==obj.detailMapPalm){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapNamHiang){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapAdd){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapChomChol){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapBaannernnam){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapCafe){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapRobinson){sendTextMessage(senderID, obj.text);}
      }//end for
    }, 1000)
   }//end else if
