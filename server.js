@@ -409,18 +409,6 @@ function receivedPostback(event) {
    }, 500)
    /////////////////////////////////////////////////////////////////
   }//end else if
-
-
-  
-  ///////ไปร้านนี้แน่นอน
-  /*else if(payload=='sureRobinsonFirst'||payload=='sureCafeFirst'||payload=='sureBaannernnamFirst'||payload=='sureChomCholFirst'||payload=='sureNamHiangFirst'||payload=='sureAddFirst'||payload=='surePalmFirst'){
-    setTimeout(function() {
-      sendTextMessage(senderID, "ขอให้รับประทานให้อร่อยนะครับ :)");
-      }, 500)
-    setTimeout(function() {
-      needYourHelpEnd(senderID);
-      }, 1000)
-  }*/
   
 }
 
