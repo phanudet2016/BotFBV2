@@ -307,12 +307,11 @@ function receivedPostback(event) {
        var obj = data.bigdata[i];
        if(payload==obj.detailMapPalm){mapReviewPalm(senderID);}
        if(payload==obj.detailMapNamHiang){mapReviewNamHiang(senderID);}
-       /*else if(payload==obj.detailMapAdd){mapReviewAdd(senderID);}
-       else if(payload==obj.detailMapChomChol){mapReviewChomChol(senderID);}
-       else if(payload==obj.detailMapBaannernnam){mapReviewBaannernnam(senderID);}
-       else if(payload==obj.detailMapCafe){mapReviewCafe(senderID);}
-       else if(payload==obj.detailMapRobinson){mapReviewRobinson(senderID);}*/
-     
+       if(payload==obj.detailMapAdd){mapReviewAdd(senderID);}
+       if(payload==obj.detailMapChomChol){mapReviewChomChol(senderID);}
+       if(payload==obj.detailMapBaannernnam){mapReviewBaannernnam(senderID);}
+       if(payload==obj.detailMapCafe){mapReviewCafe(senderID);}
+       if(payload==obj.detailMapRobinson){mapReviewRobinson(senderID);}
      }//end for
    }, 500)
    
