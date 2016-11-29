@@ -372,7 +372,7 @@
       },
       
       
-      {"detailMapPalm":"detailPalmFirst"},
+      {"detailMapPalm":"detailPalmFirst", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapPalm":"detailPalmSecond", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapPalm":"detailPalmThird", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapPalm":"detailPalmFourth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
