@@ -277,7 +277,7 @@ function receivedPostback(event) {
       var obj = data.bigdata[i];
       if(payload==obj.eat){sendTextMessage(senderID, obj.price);}
     }
-   }, 2000)
+   }, 3000)
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
