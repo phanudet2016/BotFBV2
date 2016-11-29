@@ -395,23 +395,33 @@ function receivedPostback(event) {
    }, 1500)
    /////////////////////////////////////////////////////////////////
    
-   
+    ///////// Click ไปร้านนี้แน่นอน //////
+   setTimeout(function() {
+     for(var i = 0; i < data.bigdata.length; i++) {
+       var obj = data.bigdata[i];
+       if(payload==obj.sure){
+         sendTextMessage(senderID, obj.text);
+         setTimeout(function() {
+           needYourHelpEnd(senderID);
+         }, 1000)
+       }
+     }
+   }, 500)
+   /////////////////////////////////////////////////////////////////
   }//end else if
 
 
   
   ///////ไปร้านนี้แน่นอน
-  else if(payload=='sureRobinsonFirst'||payload=='sureCafeFirst'||payload=='sureBaannernnamFirst'||payload=='sureChomCholFirst'||payload=='sureNamHiangFirst'||payload=='sureAddFirst'||payload=='surePalmFirst'){
+  /*else if(payload=='sureRobinsonFirst'||payload=='sureCafeFirst'||payload=='sureBaannernnamFirst'||payload=='sureChomCholFirst'||payload=='sureNamHiangFirst'||payload=='sureAddFirst'||payload=='surePalmFirst'){
     setTimeout(function() {
       sendTextMessage(senderID, "ขอให้รับประทานให้อร่อยนะครับ :)");
       }, 500)
     setTimeout(function() {
       needYourHelpEnd(senderID);
       }, 1000)
-  }
-  else {
-    var result = "";
-  }
+  }*/
+  
 }
 
   /////////////แสดงรายละเอียดโรบินสัน///////////////
