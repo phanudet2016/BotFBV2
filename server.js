@@ -271,13 +271,13 @@ function receivedPostback(event) {
       else if(payload == 'eatPalmFifth'){sendImagePalmFifth(senderID);}
       else if(payload == 'eatPalmSixth'){sendImagePalmSixth(senderID);}
       else{var result = "";}
-    }, 1500)
+    }, 1200)
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
       if(payload==obj.eat){sendTextMessage(senderID, obj.price);}
     }
-   }, 3000)
+   }, 2000)
     setTimeout(function() {
     for(var i = 0; i < data.bigdata.length; i++) {
       var obj = data.bigdata[i];
