@@ -24,16 +24,12 @@ app.get('/webhook', function(req, res) {
 
 app.post('/webhook', function (req, res) {
   var data = req.body;
-
-  // Make sure this is a page subscription
+  
   if (data.object == 'page') {
-    // Iterate over each entry
-    // There may be multiple if batched
     data.entry.forEach(function(pageEntry) {
       var pageID = pageEntry.id;
       var timeOfEvent = pageEntry.time;
-
-      // Iterate over each messaging event
+      
       pageEntry.messaging.forEach(function(messagingEvent) {
         if (messagingEvent.message) {
           receivedMessage(messagingEvent);
@@ -44,11 +40,6 @@ app.post('/webhook', function (req, res) {
         }
       });
     });
-
-    // Assume all went well.
-    //
-    // You must send back a 200, within 20 seconds, to let us know you've 
-    // successfully received the callback. Otherwise, the request will time out.
     res.sendStatus(200);
   }
 });
@@ -68,23 +59,10 @@ function receivedMessage(event) {
   var appId = message.app_id;
   var metadata = message.metadata;
  
-  // You may get a text or attachment but not both
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
 
- /* if (isEcho) {
-    // Just logging message echoes to console
-    console.log("Received echo for message %s and app %d with metadata %s", 
-      messageId, appId, metadata);
-    return;
-  } else if (quickReply) {
-    var quickReplyPayload = quickReply.payload;
-    console.log("Quick reply for message %s with payload %s",
-      messageId, quickReplyPayload);
-    sendTextMessage(senderID, "Quick reply tapped");
-    return;
-  }*/
   if (messageText) {
     if (messageText == 'ค้นหาร้านอาหาร') {
       setTimeout(function() {
@@ -120,8 +98,6 @@ function receivedMessage(event) {
       }, 1500)
     } else {}
 
-    // If we receive a text message, check to see if it matches a keyword
-    // and send back the example. Otherwise, just echo the text we received.
     switch (messageText) {
       case 'hello':
         sendGreetMessage(senderID);
@@ -150,9 +126,6 @@ function receivedPostback(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfPostback = event.timestamp;
-
-  // The 'payload' param is a developer-defined field which is set in a postback 
-  // button for Structured Messages. 
   var payload = event.postback.payload;
   
   console.log("Received postback for user %d and page %d with payload '%s' " + 
@@ -5096,35 +5069,6 @@ function callSendAPI(messageData) {
     }
   });  
 }
-
-/*function sendQuickReply(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: "What's your favorite movie genre?",
-      quick_replies: [
-        {
-          "content_type":"text",
-          "title":"Action",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
-        },
-        {
-          "content_type":"text",
-          "title":"Comedy",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
-        },
-        {
-          "content_type":"text",
-          "title":"Drama",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
-        }
-      ]
-    }
-  };
-  callSendAPI(messageData);
-}*/
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
