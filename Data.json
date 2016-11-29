@@ -418,7 +418,15 @@
       {"detailMapRobinson":"detailRobinsonThird", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapRobinson":"detailRobinsonFourth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
       {"detailMapRobinson":"detailRobinsonFifth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
-      {"detailMapRobinson":"detailRobinsonSixth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"}
+      {"detailMapRobinson":"detailRobinsonSixth", "text":"นี้คือสิ่งที่คุณจะไป 🏠"},
+      
+      {"sure":"sureRobinsonFirst"},
+      {"sure":"sureCafeFirst"},
+      {"sure":"sureBaannernnamFirst"},
+      {"sure":"sureChomCholFirst"},
+      {"sure":"sureNamHiangFirst"},
+      {"sure":"sureAddFirst"},
+      {"sure":"surePalmFirst"}
       
    ]
 }
