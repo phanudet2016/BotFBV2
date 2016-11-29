@@ -333,6 +333,25 @@ function receivedPostback(event) {
        if(payload==obj.detailMapRobinson){sendTextMessage(senderID, obj.text);}
      }//end for
    }, 1000)
+    setTimeout(function() {
+     for(var i = 0; i < data.bigdata.length; i++) {
+       var obj = data.bigdata[i];
+       if(payload==obj.detailMapPalm){
+          if(payload == 'detailPalmFirst'){detailPalmFirst(senderID);}
+          if(payload == 'detailPalmSecond'){detailPalmSecond(senderID);}
+          if(payload == 'detailPalmThird'){detailPalmThird(senderID);}
+          if(payload == 'detailPalmFourth'){detailPalmFourth(senderID);}
+          if(payload == 'detailPalmFifth'){detailPalmFifth(senderID);}
+          if(payload == 'detailPalmSixth'){detailPalmSixth(senderID);}
+       }
+       if(payload==obj.detailMapNamHiang){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapAdd){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapChomChol){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapBaannernnam){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapCafe){sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapRobinson){sendTextMessage(senderID, obj.text);}
+     }//end for
+   }, 1500)
   }//end else if
 
   
