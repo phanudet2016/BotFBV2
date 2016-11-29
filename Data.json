@@ -393,11 +393,11 @@
       {"detailMapAdd":"detailAddFifth"},
       {"detailMapAdd":"detailAddSixth"},
       
+      {"detailMapChomChol":"detailChomCholFirst"},
       {"detailMapChomChol":"detailChomCholSecond"},
       {"detailMapChomChol":"detailChomCholThird"},
       {"detailMapChomChol":"detailChomCholFourth"},
       {"detailMapChomChol":"detailChomCholFifth"},
-      {"detailMapChomChol":"detailChomCholSixth"},
       
       {"detailMapBaannernnam":"detailBaannernnamFirst"},
       {"detailMapBaannernnam":"detailBaannernnamSecond"},
