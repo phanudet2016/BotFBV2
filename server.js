@@ -324,7 +324,7 @@ function receivedPostback(event) {
    setTimeout(function() {
      for(var i = 0; i < data.bigdata.length; i++) {
        var obj = data.bigdata[i];
-       if(payload==obj.detailMapPalm){{sendTextMessage(senderID, obj.text);}
+       if(payload==obj.detailMapPalm){sendTextMessage(senderID, obj.text);}
      }//end for
    }, 1000)
   }//end else if
