@@ -95,7 +95,7 @@ function receivedMessage(event) {
       }, 1000)
       setTimeout(function() {
         findRestaurants(senderID);sendGenericMessage
-      }, 1500)
+      }, 1500)}
        else if (messageText == 'gg') {sendGenericMessage(senderID);}
     } else {}
 
