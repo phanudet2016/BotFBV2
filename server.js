@@ -95,9 +95,8 @@ function receivedMessage(event) {
       }, 1000)
       setTimeout(function() {
         findRestaurants(senderID);sendGenericMessage
-      }, 1500)}
-       else if (messageText == 'gg') {sendGenericMessage(senderID);}
-     else {}
+      }, 1500)
+    }else {}
 
     switch (messageText) {
       case 'hello':
@@ -386,52 +385,7 @@ function receivedPostback(event) {
   
 }
 
-function sendGenericMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "generic",
-          elements: [{
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url:"http://www.w3schools.com/css/paris.jpg",
-            buttons: [{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
-            }],
-          }, {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: "http://www.w3schools.com/css/paris.jpg",
-            buttons: [{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for second bubble",
-            }]
-          }]
-        }
-      }
-    }
-  };  
 
-  callSendAPI(messageData);
-}
 
   /////////////แสดงรายละเอียดโรบินสัน///////////////
 function detailRobinsonFirst(recipientId, messageText) {
