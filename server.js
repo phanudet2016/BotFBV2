@@ -97,7 +97,7 @@ function receivedMessage(event) {
         findRestaurants(senderID);sendGenericMessage
       }, 1500)}
        else if (messageText == 'gg') {sendGenericMessage(senderID);}
-    } else {}
+     else {}
 
     switch (messageText) {
       case 'hello':
