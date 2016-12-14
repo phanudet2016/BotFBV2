@@ -118,7 +118,12 @@ function receivedMessage(event) {
     }
   } 
   else if (messageAttachments) {
-    sendTextMessage(senderID, "Message with attachment received"); /////ปุ่มกดไลน์ ค่อยทำต่อ
+    setTimeout(function() {
+      sendTextMessage(senderID, ":) :) :) :)"); 
+    }, 500)
+    setTimeout(function() {
+      needYourHelpDefault1(senderID);
+    }, 1000)
   }
 }
 
@@ -4855,6 +4860,34 @@ function needYourHelpDefault(recipientId, messageText) {
         payload: {
           template_type: "button",
           text : "¯\_(ツ)_/¯ มีอะไรให้ช่วยมั้ย!",
+            buttons: [{
+              type: "postback",
+              title: "🍣 ค้นหาร้านอาหาร",
+              payload: "findRestaurant"
+            },
+            {
+              type: "postback",
+              title: "❌ ไม่เป็นไร ขอบคุณ",
+              payload: "noThank"
+            }]
+        }
+      }
+    }
+  };
+  callSendAPI(messageData);
+}
+
+function needYourHelpDefault1(recipientId, messageText) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text : "🍉 มีอะไรให้ช่วยมั้ย!",
             buttons: [{
               type: "postback",
               title: "🍣 ค้นหาร้านอาหาร",
